@@ -5,26 +5,24 @@
 ═══════════════════════════════════════════════════════════ */
 
 const FAQ_DATA = [
-    { q: 'Who can participate in MAKE-A-THON 7.0?', a: 'Any undergraduate engineering student can participate, regardless of year or department.<br><br>Participants from other colleges are also welcome. However, teams must be formed within the same college (cross-college teams are not allowed).' },
-    { q: 'What are the requirements to participate?', a: 'To participate, you must:<br>• Register on the official website<br>• Submit your idea abstract (free of cost)<br>• Get shortlisted for the final round<br>• Complete the payment after shortlisting' },
-    { q: 'Is there a registration fee?', a: 'Yes.<br>• Abstract submission: Free<br>• Final participation fee: ₹350 per participant (applicable only for shortlisted teams)' },
-    { q: 'How many members can a team have?', a: 'Each team must have:<br>• Minimum: 4 members<br>• Maximum: 6 members' },
-    { q: 'Is inter-college participation allowed?', a: 'No. Teams must consist of members from the same college, but can include students from different departments or years of study.' },
-    { q: 'What kind of projects can we build?', a: 'Participants can build hardware, software, or hybrid solutions based on the provided problem statements.<br><br>Projects must be developed only during the 24-hour hackathon.<br>Pre-built projects will lead to immediate disqualification.' },
-    { q: 'What are the tracks/domains for the hackathon?', a: 'The hackathon includes both Hardware and Software tracks, such as:<br>• AI & ML, IoT, Robotics, Embedded Systems, etc.<br>• Healthcare, Smart Cities, FinTech, Sustainability, etc.<br>• Cybersecurity, AR/VR, and more<br><br>Refer to the "Problem Statements / Tracks" section on the website for detailed domains.' },
-    { q: 'When and where will the hackathon be conducted?', a: '📍 Venue: Multi-Purpose Hall (MPH), SVCE, Sriperumbudur<br>📅 Date & Time:<br>• 27th April 2026 – 9:00 AM (Start)<br>• 28th April 2026 – ~2:00 PM (End)' },
-    { q: 'What will be provided during the hackathon?', a: 'Participants will receive:<br>• Certificates (Participation & Winners)<br>• Food & refreshments throughout the event<br>• Workstations & seating arrangements<br>• WiFi & power supply<br>• Mentorship & technical support<br>• ID cards / access bands<br>• Goodies, welcome kits, and more<br><br>Transportation support will be provided.<br>Accommodation (hostel) will be available for outstation participants at a nominal cost.' },
-    { q: 'Will there be prizes?', a: 'Yes!<br>Participants can win:<br>• Cash prizes<br>• Certificates & recognition<br>• Internship opportunities<br>• Industry exposure & networking<br>• And much more<br><br>Top-performing teams may also gain opportunities for further development, mentorship, and industry collaboration.' },
-    { q: 'Can I start working on my project before the hackathon?', a: 'You may brainstorm and prepare ideas in advance.<br><br>However, actual development must happen only during the hackathon.<br>Any violation will lead to disqualification.' },
-    { q: 'Will mentors be available during the hackathon?', a: 'Yes.<br><br>Participants will have access to dedicated student mentors during designated mentoring rounds. They can assist with guidance, support, and basic troubleshooting.<br><br>However, their involvement will be limited to ensure fairness for all teams.' },
-    { q: 'How are projects evaluated?', a: 'Projects will be evaluated based on:<br>• Innovation & originality<br>• Technical implementation<br>• Feasibility & real-world impact<br>• Prototype/demo quality<br>• Presentation<br><br>Evaluation will be conducted by a panel of faculty members, industry experts, and alumni.' },
-    { q: 'Do participants get certificates?', a: 'Yes. All participants will receive participation certificates, and winners will receive winner certificates and recognition.' },
-    { q: 'Are problem statements mandatory to follow?', a: 'Yes. All teams must build solutions strictly based on the official problem statements provided by the organizers.<br><br>There is no open innovation category.' },
-    { q: 'Is prior hackathon experience required?', a: 'No. Beginners are welcome!<br><br>Make-a-thon is designed to encourage learning, experimentation, and innovation.' },
-    { q: 'What should participants bring?', a: 'Participants are expected to bring:<br>• Laptops & chargers<br>• Required hardware components and tools (soldering kits, etc.)<br>• Extension boards, cables, and accessories<br>• Valid college ID<br>• Personal WiFi hotspots (recommended due to network congestion)<br>• Basic essentials (change of clothes, personal items, etc.)<br><br>Organizers will not provide any hardware components or software tools.' },
-    { q: 'Will internet access be provided?', a: 'Yes, WiFi/LAN access will be available.<br><br>However, due to a large number of participants and possible network congestion, participants are strongly advised to bring their own WiFi hotspots.' },
-    { q: 'Can participants leave the venue during the hackathon?', a: 'No. Participants are expected to remain within the venue and campus throughout the hackathon duration.<br><br>Exiting the venue will not be permitted once the event begins.' },
-    { q: 'Who can we contact for queries?', a: 'Contact our student coordinators:<br>• Roshan M - 9841092274 <br>• Adarsh S - 7305970106<br>• Yaaminy S K - 6380989594<br>• Roobuck Rao C - 8148204922<br>• Mohammed Raeef - 9150158647 <br>• Harinee V T - 7358120955<br>• Lakshanaa A M - 9940337194<br>• Harini C - 8610163433<br>• Bawadharani Sree R - 9080251947<br>• Balaji S - 8122586514<br>• Surya K - 8754425137' }
+    { q: 'Who can participate in Tech-A-Week 1.0?', a: 'Only students of GLA University can participate.<br><br>Students from any other college are not allowed to participate in any event.' },
+    { q: 'Can students from other colleges join?', a: 'No. Tech-A-Week 1.0 is open to GLA University students only.' },
+    { q: 'Is there a registration fee?', a: 'No. Registration is completely free.' },
+    { q: 'When does registration open?', a: 'Registration for all events will open soon on this website. Keep an eye on this page.' },
+    { q: 'What are the dates of the event?', a: 'The dates have not been revealed yet. They are revealing soon.' },
+    { q: 'What events are part of Tech-A-Week 1.0?', a: 'Tech-A-Week 1.0 includes:<br>• Ideathon<br>• Tech Debate<br>• Project Exhibition<br>• 2 workshops (IoT &amp; AI, and AI, Cloud &amp; Cyber)' },
+    { q: 'Who is organising Tech-A-Week 1.0?', a: 'Synapse, the IoT and Robotics Club of GLA University, organises the entire event, in collaboration with the AI, Cloud and Cyber clubs and Meraki Chronicles (Literature Club).' },
+    { q: 'How does the Ideathon work?', a: 'The Ideathon is for early-stage innovation and problem pitching, focused on tech-driven solutions to real-world challenges.<br><br>• Team size: 2–4 students<br>• Pitch time: 8 minutes per team<br>• 5-minute presentation + 3-minute Q&amp;A with the jury' },
+    { q: 'What should our Ideathon presentation include?', a: 'A PPT of a maximum of 7 slides covering:<br>• The problem<br>• Target audience<br>• Tech architecture<br>• Proposed solution' },
+    { q: 'Can the audience ask questions during the Ideathon?', a: 'Yes. Presentations are held openly in front of all participants, and the audience can ask questions to the presenting team.' },
+    { q: 'Who can take part in the Tech Debate?', a: 'The Tech Debate is for B.Tech 1st Year students of AIML, CSE, ECE and AI.<br><br>Each team has 4 students.' },
+    { q: 'How is the Tech Debate conducted?', a: 'Each match runs 10–12 minutes and has opening statements, a rebuttal round and a judges&apos; Q&amp;A.<br><br>• Round 1 (Screening): 10:30 AM – 1:00 PM<br>• Final Round: 2:40 PM – 4:40 PM' },
+    { q: 'What are the Tech Debate topics?', a: 'The topics have not been decided yet. Every club will have different topics, and they will be revealed soon.' },
+    { q: 'What can be exhibited in the Project Exhibition?', a: 'Only innovative hardware projects.<br><br>The exhibition is a physical showcase of hands-on prototypes and functional tech models.' },
+    { q: 'Who organises the Project Exhibition?', a: 'The Project Exhibition is organised completely by the FUSION Club (IoT, Robotics &amp; Drones).' },
+    { q: 'What workshops will be held?', a: 'There are 2 workshops:<br>• Workshop 1: IoT &amp; AI, by the IoT and AI clubs<br>• Workshop 2: AI, Cloud &amp; Cyber, by the AI, Cloud and Cyber clubs<br><br>Dates and speakers are revealing soon.' },
+    { q: 'Who will mentor the participants?', a: 'Industry leaders will mentor the participants. The mentors are revealing soon.' },
+    { q: 'Who can I contact for queries?', a: 'Coordinator details will be added soon. Until then, please check back on this page.' }
 ];
 
 export function initFAQ() {

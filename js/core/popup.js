@@ -20,8 +20,7 @@
 
   exploreBtn.addEventListener('click', () => {
     close();
-    const about = document.getElementById('about');
-    if (about) about.scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   popup.addEventListener('click', (e) => {
