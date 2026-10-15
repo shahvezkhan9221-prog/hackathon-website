@@ -45,7 +45,7 @@
 })();
 
 /* ═══════════════════════════════════════════════════════════
-   Register Modal — Prompt "Choose Your Domain"
+   Register Modal — "Choose Your Event"
 ═══════════════════════════════════════════════════════════ */
 (function() {
   function initRegisterModal() {
@@ -117,11 +117,12 @@
     overlay.innerHTML = `
       <div class="reg-modal">
         <button class="reg-modal__close" id="reg-modal-close" aria-label="Close">&times;</button>
-        <h3 class="reg-modal__title">Choose Your Domain</h3>
+        <h3 class="reg-modal__title">Choose Your Event</h3>
+        <p class="reg-modal__sub">Registration opens soon &middot; GLA University students only</p>
         <div class="reg-modal__options">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScpwvE6Kv8xaptuxsB94GtzM7T47dGvnl6bz6-la-zJvvRqdg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="reg-modal__btn reg-modal__btn--hw">Hardware</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScpwvE6Kv8xaptuxsB94GtzM7T47dGvnl6bz6-la-zJvvRqdg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="reg-modal__btn reg-modal__btn--sw">Software</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwVOCCczDX_1iWUV9X5SoeZWcKvzmdLpobrOl43qA0XFthsw/viewform" target="_blank" rel="noopener noreferrer" class="reg-modal__btn reg-modal__btn--ind">Industry</a>
+          <button type="button" data-event="event-ideathon" class="reg-modal__btn reg-modal__btn--hw">Ideathon<span class="reg-modal__btn-soon">REGISTRATION OPENS SOON</span></button>
+          <button type="button" data-event="event-debate" class="reg-modal__btn reg-modal__btn--sw">Tech Debate<span class="reg-modal__btn-soon">REGISTRATION OPENS SOON</span></button>
+          <button type="button" data-event="event-exhibition" class="reg-modal__btn reg-modal__btn--ind">Project Exhibition<span class="reg-modal__btn-soon">REGISTRATION OPENS SOON</span></button>
         </div>
       </div>
     `;
@@ -138,6 +139,16 @@
       if (e.key === 'Escape' && overlay.classList.contains('is-active')) {
         closeModal();
       }
+    });
+
+    // Registration links are not live yet: jump to the event's details instead.
+    // When a form is ready, add `href` handling here keyed by data-event.
+    overlay.querySelectorAll('[data-event]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        closeModal();
+        const target = document.getElementById(btn.dataset.event);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
     });
 
     const openModal = (e) => {

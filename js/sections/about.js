@@ -152,7 +152,7 @@ function animatePillars() {
 ───────────────────────────────────────────────────────── */
 function animateCountUp() {
     const metrics = document.querySelectorAll('.about-metric__value[data-count]');
-    if (!metrics.length) return;
+    if (!document.querySelector('.about-metric')) return;
 
     gsap.fromTo('.about-metric',
         { opacity: 0, y: 20 },

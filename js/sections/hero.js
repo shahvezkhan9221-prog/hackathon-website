@@ -1,66 +1,44 @@
 /* ═══════════════════════════════════════════════════════════
    js/sections/hero.js
-   SPIDER-VERSE Hero
-   Countdown timer and CTA interactions only
+   SPIDER-VERSE Hero — opening entrance sequence + CTA
 ═══════════════════════════════════════════════════════════ */
 
 export function initHero() {
-    setupCountdownTimer();
+    playOpeningSequence();
     setupCTA();
 }
 
 /**
- * Handles the countdown logic to April 27
+ * Staggered "web-slinging" entrance that plays once the loader is gone.
  */
-function setupCountdownTimer() {
-    const domDays = document.getElementById('t-days');
-    const domHours = document.getElementById('t-hours');
-    const domMins = document.getElementById('t-mins');
-    const domSecs = document.getElementById('t-secs');
+function playOpeningSequence() {
+    const gsap = window.gsap;
+    if (!gsap) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    if (!domDays || !domHours || !domMins || !domSecs) return;
+    const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
-    // Use explicitly defined Date constructor (Year, Month[0-indexed], Day, Hour, Min, Sec)
-    let targetDate = new Date(2026, 3, 27, 9, 0, 0).getTime();
-
-    function updateTimer() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-
-        if (distance < 0) {
-            domDays.innerText = '00';
-            domHours.innerText = '00';
-            domMins.innerText = '00';
-            domSecs.innerText = '00';
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        domDays.innerText = days.toString().padStart(2, '0');
-        domHours.innerText = hours.toString().padStart(2, '0');
-        domMins.innerText = minutes.toString().padStart(2, '0');
-        domSecs.innerText = seconds.toString().padStart(2, '0');
-    }
-
-    updateTimer(); // Initial call
-    setInterval(updateTimer, 1000);
+    tl.from('.hero__video-bg', { scale: 1.15, opacity: 0, duration: 1.6, ease: 'power2.out' }, 0)
+        .from('.comic-frame', { scale: 0.2, opacity: 0, duration: 0.7, stagger: 0.08, ease: 'back.out(2)' }, 0.1)
+        .from('.hero__title', { yPercent: -120, scaleY: 1.6, opacity: 0, duration: 0.9, ease: 'elastic.out(1, 0.6)' }, 0.3)
+        .from('.hero__title-sub', { scale: 3, opacity: 0, rotation: -12, duration: 0.7, ease: 'back.out(2.2)' }, 0.75)
+        .from('.hero__badge', { x: -80, opacity: 0, duration: 0.6 }, 1.0)
+        .from('.hero__subtitle', { y: 30, opacity: 0, duration: 0.6 }, 1.15)
+        .from('.hero__reveal', { y: 20, opacity: 0, scale: 0.8, duration: 0.5, ease: 'back.out(2)' }, 1.3)
+        .from('.hero__buttons .btn', { y: 40, opacity: 0, duration: 0.5, stagger: 0.12, ease: 'back.out(1.8)' }, 1.45);
 }
 
 function setupCTA() {
-    const btn = document.getElementById('cta-launch');
+    const btn = document.getElementById('cta-events');
     const flash = document.getElementById('portal-flash');
     if (!btn || !flash) return;
 
     btn.addEventListener('click', () => {
         flash.classList.add('active');
         setTimeout(() => {
-            const about = document.getElementById('about');
-            if (about) about.scrollIntoView({ behavior: 'smooth' });
+            const target = document.getElementById('events');
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
             setTimeout(() => flash.classList.remove('active'), 800);
-        }, 400); // 400ms is halfway through the animation
+        }, 400);
     });
 }
