@@ -1,64 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-background">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HEKCE27K1S"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-HEKCE27K1S');
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Makeathon 7.0 | National Level Hackathon at SVCE</title>
+  <meta name="theme-color" content="#0f1118" />
+  <title>Tech-A-Week 1.0 | Flagship Innovation Week at GLA University</title>
   <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   <meta name="description"
-    content="Makeathon 7.0: A 24-hour national level hardware and software creation hackathon at SVCE. Build the future with us." />
+    content="Tech-A-Week 1.0 is the flagship innovation and tech-driven week of GLA University, Greater Noida, featuring the Ideathon, Tech Debate and Project Exhibition. Open to GLA University students. Registration opens soon." />
   <meta name="keywords"
-    content="Makeathon, SVCE, Hackathon, Makeathon 7.0, Hardware Hackathon, Software Hackathon, National Level Hackathon" />
-  <meta name="author" content="Makeathon 7.0 Organizing Team" />
-  <link rel="canonical" href="https://make-a-thon-7.in/" />
+    content="Tech-A-Week, Tech Week, GLA University, Greater Noida, Ideathon, Tech Debate, Project Exhibition, FUSION Club, Synapse Club" />
+  <meta name="author" content="FUSION Club, GLA University" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Makeathon 7.0 | National Level Hackathon at SVCE" />
+  <meta property="og:title" content="Tech-A-Week 1.0 | Flagship Innovation Week at GLA University" />
   <meta property="og:description"
-    content="Makeathon 7.0: A 24-hour national level hardware and software creation hackathon at SVCE. Build the future with us." />
+    content="Ideathon, Tech Debate and Project Exhibition. Organised by GLA University, Greater Noida. Registration opens soon." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://make-a-thon-7.in/" />
-  <meta property="og:image" content="https://make-a-thon-7.in/assets/Logo/logo.svg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Makeathon 7.0 | National Level Hackathon at SVCE" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tech-A-Week 1.0 | GLA University" />
   <meta name="twitter:description"
-    content="Makeathon 7.0: A 24-hour national level hardware and software creation hackathon at SVCE." />
-  <meta name="twitter:image" content="https://make-a-thon-7.in/assets/Logo/logo.svg" />
+    content="Ideathon, Tech Debate and Project Exhibition. Organised by GLA University, Greater Noida." />
 
-  <!-- Fonts: Anton for display pop-art, Montserrat for readability -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Montserrat:ital,wght@0,400;0,600;0,800;1,400;1,800&display=swap"
     rel="stylesheet" />
 
-  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/about.css" />
   <link rel="stylesheet" href="css/timeline.css" />
-  <link rel="stylesheet" href="css/gallery.css" />
-  <link rel="stylesheet" href="css/problems.css" />
+  <link rel="stylesheet" href="css/synapse.css" />
+  <link rel="stylesheet" href="css/events.css" />
   <link rel="stylesheet" href="css/team.css" />
   <link rel="stylesheet" href="css/sponsorship.css" />
   <link rel="stylesheet" href="css/faq.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/loading.css" />
+  <link rel="stylesheet" href="css/techweek.css" />
 
-  <!-- CDN Libraries -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
@@ -68,17 +51,16 @@
 
 <body>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       LOADING SCREEN — Spider-Man frame animation synced to load %
-  ═══════════════════════════════════════════════════════════ -->
+  <!-- LOADING SCREEN — Spider-Man frame animation synced to load % -->
   <div id="loading-screen" class="loading-screen">
     <p class="loading__title">INITIALIZING<span class="loading__dots">...</span></p>
+    <p class="loading__brand">TECH-A-WEEK 1.0 <span aria-hidden="true">/</span> GLA UNIVERSITY</p>
     <div class="loading__frame-wrapper">
       <img id="loading-frame" class="loading__frame" src="assets/page_loading/frame_00_delay-0.033s.webp"
         alt="Loading animation" />
     </div>
     <div class="loading__bottom">
-      <p class="loading__tip">🖥️ For the best experience, use a desktop browser</p>
+      <p class="loading__tip">For the best experience, use a desktop browser</p>
       <p class="loading__quote">"Anyone can wear the mask." — Miles Morales</p>
       <div class="loading__progress-track">
         <div class="loading__progress-bar" id="loading-bar"></div>
@@ -87,27 +69,24 @@
     </div>
   </div>
 
-  <!-- Full-page halftone overlay -->
   <div class="halftone-overlay" aria-hidden="true"></div>
 
   <!-- Navigation Bar -->
   <nav class="comic-nav">
     <div class="nav__container">
-      <a href="#hero" class="nav__logo" aria-label="Makeathon 7.0 Home">
-        <img src="assets/Logo/logo.svg" alt="Makeathon 7.0" class="nav__logo-img" />
+      <a href="#hero" class="nav__logo" aria-label="Tech-A-Week 1.0 Home">
+        <img src="assets/Logo/logo.svg" alt="Tech-A-Week 1.0" class="nav__logo-img" />
       </a>
       <ul class="nav__links">
         <li><a href="#about" class="nav__link">About Us</a></li>
         <li><a href="#timeline" class="nav__link">Timeline</a></li>
-        <li><a href="#problems" class="nav__link">Problem Statements</a></li>
-        <li><a href="#sponsorship" class="nav__link">Sponsors</a></li>
+        <li><a href="#events" class="nav__link">Events</a></li>
+        <li><a href="#synapse" class="nav__link">Synapse</a></li>
+        <li><a href="#mentors" class="nav__link">Mentors</a></li>
         <li><a href="#team" class="nav__link">The Crew</a></li>
         <li><a href="#faq" class="nav__link">FAQ</a></li>
-        <li><a href="results.html" class="nav__link text-yellow" style="text-shadow: 1px 1px 0 var(--c-magenta);">RESULTS</a></li>
       </ul>
-      <a href="https://forms.gle/MSiu9x7Mo2kYBmmA9" target="_blank" rel="noopener noreferrer"
-        class="btn btn--nav text-yellow">REGISTER</a>
-      <!-- Hamburger toggle (mobile only) -->
+      <a href="#events" class="btn btn--nav text-yellow">REGISTER</a>
       <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"
         aria-controls="nav-drawer">
         <span></span>
@@ -117,34 +96,26 @@
     </div>
   </nav>
 
-  <!-- Mobile slide-out drawer -->
   <div class="nav__drawer" id="nav-drawer" role="dialog" aria-label="Navigation menu">
     <a href="#about" class="nav__drawer-link">About Us</a>
     <a href="#timeline" class="nav__drawer-link">Timeline</a>
-    <a href="#problems" class="nav__drawer-link">Problem Statements</a>
-    <a href="#sponsorship" class="nav__drawer-link">Sponsors</a>
+    <a href="#events" class="nav__drawer-link">Events</a>
+    <a href="#synapse" class="nav__drawer-link">Synapse</a>
+    <a href="#mentors" class="nav__drawer-link">Mentors</a>
     <a href="#team" class="nav__drawer-link">The Crew</a>
     <a href="#faq" class="nav__drawer-link">FAQ</a>
-    <a href="results.html" class="nav__drawer-link text-yellow">RESULTS</a>
-    <a href="https://forms.gle/MSiu9x7Mo2kYBmmA9" target="_blank" rel="noopener noreferrer"
-      class="btn btn--nav text-yellow">REGISTER</a>
+    <a href="#events" class="btn btn--nav text-yellow">REGISTER</a>
   </div>
-  <!-- Backdrop -->
   <div class="nav__overlay" id="nav-overlay" aria-hidden="true"></div>
-  </nav>
 
   <main id="main-content">
 
-    <!-- ═══════════════════════════════════════════════════════════
-       SECTION 1 — HERO / LANDING
-  ═══════════════════════════════════════════════════════════ -->
+    <!-- SECTION 1 — HERO -->
     <section id="hero" class="section section--hero" aria-label="Hero">
-      <!-- Background Video -->
       <video autoplay muted loop playsinline class="hero__video-bg" aria-hidden="true">
         <source src="assets/home_page_vid.mp4" type="video/mp4">
       </video>
 
-      <!-- Comic Book Borders -->
       <div class="comic-frame top-left"></div>
       <div class="comic-frame top-right"></div>
       <div class="comic-frame bottom-left"></div>
@@ -152,38 +123,29 @@
 
       <div class="hero__content">
         <div class="title-wrapper">
-          <h1 class="hero__title glitch" data-text="MAKE-A-THON">MAKE-A-THON</h1>
-          <h2 class="hero__title-sub glitch-cyan" data-text="7.0">7.0</h2>
+          <h1 class="hero__title glitch" data-text="TECH-A-WEEK">TECH-A-WEEK</h1>
+          <h2 class="hero__title-sub glitch-cyan" data-text="1.0">1.0</h2>
         </div>
 
         <div class="hero__badge">
-          <p>NATIONAL LEVEL HACKATHON</p>
+          <p>ORGANISED BY GLA UNIVERSITY</p>
         </div>
 
-        <p class="hero__subtitle"><span class="highlight-yellow">24 HOURS.</span> INFINITE POSSIBILITIES. CREATE BEYOND
+        <p class="hero__subtitle"><span class="highlight-yellow">3 DAYS.</span> INFINITE POSSIBILITIES. CREATE BEYOND
           LIMITS.</p>
 
-        <!-- Countdown Timer (Target: April 27) -->
-        <div class="hero__timer" id="hero-countdown" aria-label="Countdown to Makeathon">
-          <div class="timer__box"><span class="timer__val" id="t-days">00</span><span class="timer__lbl">DAYS</span>
-          </div>
-          <div class="timer__box"><span class="timer__val" id="t-hours">00</span><span class="timer__lbl">HRS</span>
-          </div>
-          <div class="timer__box"><span class="timer__val" id="t-mins">00</span><span class="timer__lbl">MIN</span>
-          </div>
-          <div class="timer__box"><span class="timer__val" id="t-secs">00</span><span class="timer__lbl">SEC</span>
-          </div>
+        <div class="hero__reveal" aria-label="Dates revealing soon">
+          <span class="hero__reveal-dot" aria-hidden="true"></span>
+          <span class="hero__reveal-text">DATES REVEALING SOON</span>
         </div>
 
         <div class="hero__buttons">
-          <button id="cta-launch" class="btn btn--comic" type="button"
-            onclick="window.open('https://forms.gle/MSiu9x7Mo2kYBmmA9', '_blank', 'noopener,noreferrer')">
+          <button id="cta-launch" class="btn btn--comic" type="button">
             <span class="btn__text">REGISTER</span>
             <span class="btn__shadow" aria-hidden="true"></span>
           </button>
-          <button id="cta-problems" class="btn btn--comic btn--comic-cyan" type="button"
-            onclick="document.getElementById('problems').scrollIntoView({behavior: 'smooth'})">
-            <span class="btn__text">PROBLEM STATEMENTS</span>
+          <button id="cta-events" class="btn btn--comic btn--comic-cyan" type="button">
+            <span class="btn__text">EXPLORE EVENTS</span>
             <span class="btn__shadow" aria-hidden="true"></span>
           </button>
         </div>
@@ -191,30 +153,25 @@
       <div id="portal-flash" class="portal-flash" aria-hidden="true"></div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-       SECTION 2 — ABOUT / BRIEFING
-  ═══════════════════════════════════════════════════════════ -->
-    <section id="about" class="section section--about" aria-label="About Makeathon">
+    <!-- SECTION 2 — ABOUT / BRIEFING -->
+    <section id="about" class="section section--about" aria-label="About Tech-A-Week">
 
-      <!-- Cinematic frame canvas — drawn by about.js via ScrollTrigger -->
       <canvas id="about-cinematic-canvas" aria-hidden="true"></canvas>
 
-      <!-- Sticky content layer — stays centered while section scrolls tall -->
       <div class="about__sticky-content">
         <div class="container relative z-10">
           <h2 class="section__heading comic-heading">ANYONE CAN WEAR THE MASK</h2>
 
           <div class="about__grid">
 
-            <!-- PANEL 1 — Flagship intro (wide left) -->
-            <article class="about-panel about-panel--lead" aria-label="What is Make-A-Thon">
+            <!-- PANEL 1 — Flagship intro -->
+            <article class="about-panel about-panel--lead" aria-label="What is Tech-A-Week">
               <div class="about-panel__accent-line" aria-hidden="true"></div>
               <span class="about-panel__tag">MISSION DIRECTIVE</span>
-              <h3 class="about-panel__title">The Flagship<br>Innovation Event</h3>
+              <h3 class="about-panel__title">The Flagship<br>Innovation Week</h3>
               <p class="about-panel__body">
-                <em class="about-em">Make-A-Thon</em> is the flagship innovation-driven hackathon of the Department of
-                Electronics and Communication Engineering, Sri Venkateswara College of Engineering — a platform where
-                ideas evolve into impactful solutions.
+                <em class="about-em">Tech-A-Week</em> is a flagship innovation and tech-driven innovation week of GLA
+                University, Greater Noida &mdash; a platform where ideas evolve into impactful solutions.
               </p>
               <div class="about-metrics">
                 <div class="about-metric about-metric--cyan">
@@ -228,7 +185,7 @@
                     </svg>
                   </span>
                   <div class="about-metric__body">
-                    <span class="about-metric__value" data-count="500" data-suffix="+">500+</span>
+                    <span class="about-metric__value">NA</span>
                     <span class="about-metric__lbl">Participants</span>
                   </div>
                 </div>
@@ -241,7 +198,7 @@
                     </svg>
                   </span>
                   <div class="about-metric__body">
-                    <span class="about-metric__value" data-count="120">120</span>
+                    <span class="about-metric__value">NA</span>
                     <span class="about-metric__lbl">Projects</span>
                   </div>
                 </div>
@@ -254,8 +211,8 @@
                     </svg>
                   </span>
                   <div class="about-metric__body">
-                    <span class="about-metric__value" data-count="100" data-prefix="₹" data-suffix="K">₹100K</span>
-                    <span class="about-metric__lbl">Prize Pool</span>
+                    <span class="about-metric__value">NA</span>
+                    <span class="about-metric__lbl">Prize / Reward</span>
                   </div>
                 </div>
                 <div class="about-metric about-metric--magenta">
@@ -268,74 +225,69 @@
                     </svg>
                   </span>
                   <div class="about-metric__body">
-                    <span class="about-metric__value" data-count="10" data-suffix="+">10+</span>
-                    <span class="about-metric__lbl">Internships</span>
+                    <span class="about-metric__value">NA</span>
+                    <span class="about-metric__lbl">Mentors</span>
                   </div>
                 </div>
               </div>
             </article>
 
-            <!-- PANEL 2 — Organisers (right tall) -->
-            <article class="about-panel about-panel--orgs" aria-label="Organising bodies">
+            <!-- PANEL 2 — Organiser + logo slot -->
+            <article class="about-panel about-panel--orgs" aria-label="Organising club">
               <div class="about-panel__accent-line" aria-hidden="true"></div>
               <span class="about-panel__tag">ORGANISED BY</span>
-              <h3 class="about-panel__title">The Alliance</h3>
-              <p class="about-panel__body">With six successful editions, Make-A-Thon 7.0 brings together student
-                innovators from across institutions, powered by three associations united for innovation.</p>
-              <ul class="about-orgs">
-                <li class="about-org" style="cursor: pointer;"
-                  onclick="document.getElementById('team').scrollIntoView({behavior: 'smooth'}); setTimeout(() => document.querySelector('.team__tab[data-team=\'race\']').click(), 200);">
-                  <img src="assets/Logo/race.png" alt="RACE logo" class="about-org__logo about-org__logo--invert" />
-                  <div class="about-org__text">
-                    <span class="about-org__name text-cyan">RACE</span>
-                    <span class="about-org__full">Research Association for Innovative Design in Communication and
-                      Electronics</span>
-                  </div>
-                </li>
-                <li class="about-org" style="cursor: pointer;"
-                  onclick="document.getElementById('team').scrollIntoView({behavior: 'smooth'}); setTimeout(() => document.querySelector('.team__tab[data-team=\'iete\']').click(), 200);">
-                  <img src="assets/Logo/iete.png" alt="IETE-SF logo" class="about-org__logo" />
-                  <div class="about-org__text">
-                    <span class="about-org__name text-magenta">IETE-SF</span>
-                    <span class="about-org__full">Institution of Electronics and Telecommunication Engineers – Students'
-                      Forum</span>
-                  </div>
-                </li>
-                <li class="about-org" style="cursor: pointer;"
-                  onclick="document.getElementById('team').scrollIntoView({behavior: 'smooth'}); setTimeout(() => document.querySelector('.team__tab[data-team=\'ecea\']').click(), 200);">
-                  <img src="assets/Logo/ecea.png" alt="ECEA logo" class="about-org__logo about-org__logo--invert" />
-                  <div class="about-org__text">
-                    <span class="about-org__name text-yellow">ECEA</span>
-                    <span class="about-org__full">Electronics and Communication Engineers Association</span>
-                  </div>
-                </li>
-              </ul>
+              <h3 class="about-panel__title">FUSION Club</h3>
+              <p class="about-panel__body">FUSION Club, GLA University &mdash; IoT, Robotics &amp; Drones.</p>
+              <!-- Drop the FUSION Club logo at assets/Logo/fusion.png and it replaces the placeholder automatically -->
+              <div class="about-logo-slot" role="img" aria-label="Space reserved for the FUSION Club logo">
+                <span class="about-logo-slot__label">FUSION CLUB LOGO</span>
+                <img src="assets/Logo/fusion.png" alt="FUSION Club logo" class="about-logo-slot__img"
+                  onerror="this.remove()" />
+              </div>
             </article>
 
-            <!-- PANEL 3 — Mission (full-width bottom) -->
+            <!-- PANEL 3 — Mission -->
             <article class="about-panel about-panel--mission" aria-label="Event mission">
               <div class="about-panel__accent-line" aria-hidden="true"></div>
               <span class="about-panel__tag">THE MISSION</span>
               <div class="about-panel--mission__inner">
-                <h3 class="about-panel__title">Build. Compete. Innovate.</h3>
+                <h3 class="about-panel__title">Ideate. Debate. Exhibit.</h3>
                 <p class="about-panel__body">
-                  Participants take on <em class="about-em">real-world, industry-oriented problem statements</em>,
-                  explore
-                  emerging technologies, and build functional prototypes in a fast-paced environment — fostering
-                  innovation, collaboration, and hands-on learning.
+                  Tech-A-Week brings GLA University students together across AI, Cloud, Cyber, IoT, Robotics and Drones
+                  to <em class="about-em">pitch bold ideas, sharpen technical thinking through debate, and exhibit
+                    working prototypes</em> &mdash; fostering innovation, collaboration, and hands-on learning.
                 </p>
               </div>
               <div class="about-pillars">
                 <div class="about-pillar">
-                  <span class="about-pillar__icon">⚡</span>
+                  <span class="about-pillar__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                  </span>
                   <span class="about-pillar__label">Innovation</span>
                 </div>
                 <div class="about-pillar">
-                  <span class="about-pillar__icon">🤝</span>
+                  <span class="about-pillar__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </span>
                   <span class="about-pillar__label">Collaboration</span>
                 </div>
                 <div class="about-pillar">
-                  <span class="about-pillar__icon">🛠</span>
+                  <span class="about-pillar__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path
+                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                    </svg>
+                  </span>
                   <span class="about-pillar__label">Hands-on Learning</span>
                 </div>
               </div>
@@ -343,113 +295,75 @@
 
           </div>
         </div>
-      </div><!-- /.about__sticky-content -->
+      </div>
 
     </section>
 
-
-
-
-    <!-- ═══════════════════════════════════════════════════════════
-       SECTION 3 — TIMELINE (Spider-Verse Inspired)
-       ─── HOW TO CUSTOMIZE ───
-       • To add/remove events: copy/paste a .timeline__event block
-       • Change the data-time attribute and .event__time text
-       • Swap the .event__icon emoji for any decorative icon
-       • Color classes: text-cyan, text-red, text-yellow, text-magenta
-  ═══════════════════════════════════════════════════════════ -->
+    <!-- SECTION 3 — TIMELINE (details revealing soon) -->
     <section id="timeline" class="section section--timeline" aria-label="Event Timeline">
       <div class="container min-h-screen">
-        <h2 class="section__heading comic-heading">MAKEATHON 7.0 TIMELINE</h2>
+        <h2 class="section__heading comic-heading">TECH-A-WEEK 1.0 TIMELINE</h2>
         <div class="timeline__track">
 
-          <!-- Ambient glow behind the web strand -->
           <div class="timeline__web-glow" aria-hidden="true"></div>
-          <!-- Realistic web-strand line -->
           <div class="timeline__web-line" aria-hidden="true"></div>
 
-          <!-- Crawling spider (scroll-synced via JS) -->
           <div class="timeline__spider" aria-hidden="true">
             <div class="timeline__spider-legs"></div>
           </div>
 
-          <!-- ═══════════════════════════════════
-             25th March 2026
-        ═══════════════════════════════════ -->
-          <div class="timeline__event" data-time="25 Mar">
+          <div class="timeline__event">
             <div class="event__content">
-              <span class="event__icon" aria-hidden="true">🚀</span>
-              <span class="event__time text-cyan">25th March 2026</span>
-              <h3 class="event__title">Problem Statements Release, Website Launch &amp; Registration Opens</h3>
-              <p class="event__desc">The journey begins! Problem statements go live, the official website launches, and
-                registrations open for all teams.</p>
+              <span class="event__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+              </span>
+              <span class="event__time text-cyan">REVEALING SOON</span>
+              <h3 class="event__title">Revealing Soon</h3>
             </div>
           </div>
 
-          <!-- ═══════════════════════════════════
-             17th April 2026
-        ═══════════════════════════════════ -->
-          <div class="timeline__event" data-time="17 Apr">
+          <div class="timeline__event">
             <div class="event__content">
-              <span class="event__icon" aria-hidden="true">📋</span>
-              <span class="event__time text-magenta">17th April 2026</span>
-              <h3 class="event__title">Registration &amp; PPT Idea Submission Deadline</h3>
-              <p class="event__desc">Last day to register your team and submit your PPT idea presentation. Don't miss
-                the
-                cutoff!</p>
+              <span class="event__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+              </span>
+              <span class="event__time text-magenta">REVEALING SOON</span>
+              <h3 class="event__title">Revealing Soon</h3>
             </div>
           </div>
 
-          <!-- ═══════════════════════════════════
-             21st April 2026
-        ═══════════════════════════════════ -->
-          <div class="timeline__event" data-time="21 Apr">
+          <div class="timeline__event">
             <div class="event__content">
-              <span class="event__icon" aria-hidden="true">📢</span>
-              <span class="event__time text-yellow">21st April 2026</span>
-              <h3 class="event__title">Announcement of Shortlisted Finalists &amp; Waiting List Teams</h3>
-              <p class="event__desc">Shortlisted finalists and waiting list teams are announced. Payment registration
-                opens for confirmed participants.</p>
+              <span class="event__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+              </span>
+              <span class="event__time text-yellow">REVEALING SOON</span>
+              <h3 class="event__title">Revealing Soon</h3>
             </div>
           </div>
 
-          <!-- ═══════════════════════════════════
-             24th April 2026
-        ═══════════════════════════════════ -->
-          <div class="timeline__event" data-time="24 Apr">
+          <div class="timeline__event">
             <div class="event__content">
-              <span class="event__icon" aria-hidden="true">💳</span>
-              <span class="event__time text-red">24th April 2026</span>
-              <h3 class="event__title">Payment Registration Ends</h3>
-              <p class="event__desc">Payment registration closes. RSVP will be sent to all confirmed finalists with
-                event
-                details and logistics.</p>
+              <span class="event__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+              </span>
+              <span class="event__time text-red">REVEALING SOON</span>
+              <h3 class="event__title">Revealing Soon</h3>
             </div>
           </div>
 
-          <!-- ═══════════════════════════════════
-             27th April 2026
-        ═══════════════════════════════════ -->
-          <div class="timeline__event" data-time="27 Apr">
+          <div class="timeline__event">
             <div class="event__content">
-              <span class="event__icon" aria-hidden="true">🏁</span>
-              <span class="event__time text-cyan">27th April 2026</span>
-              <h3 class="event__title">Make-A-Thon 7.0 Kickoff &amp; Inauguration Ceremony</h3>
-              <p class="event__desc">The 24-hour National Level Hackathon officially begins! Join us for the grand
-                inauguration ceremony and kickoff.</p>
-            </div>
-          </div>
-
-          <!-- ═══════════════════════════════════
-             28th April 2026
-        ═══════════════════════════════════ -->
-          <div class="timeline__event" data-time="28 Apr">
-            <div class="event__content">
-              <span class="event__icon" aria-hidden="true">🏆</span>
-              <span class="event__time text-magenta">28th April 2026</span>
-              <h3 class="event__title">Make-A-Thon 7.0 Concludes</h3>
-              <p class="event__desc">Make-A-Thon 7.0 wraps up with the announcement of winners and the valedictory
-                ceremony. Celebrate the innovation!</p>
+              <span class="event__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+              </span>
+              <span class="event__time text-cyan">REVEALING SOON</span>
+              <h3 class="event__title">Revealing Soon</h3>
             </div>
           </div>
 
@@ -457,235 +371,177 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-       SECTION 4 — GALLERY
-  ═══════════════════════════════════════════════════════════ -->
-    <section id="gallery" class="section section--gallery" aria-label="Previous Dimensions">
-      <!-- The background image and overlay -->
-      <div class="gallery__bg-overlay"></div>
-      <div class="container relative z-10 gallery-main-container">
+    <!-- SECTION 4 — ABOUT SYNAPSE CLUB -->
+    <section id="synapse" class="section section--synapse" aria-label="About Synapse Club">
+      <div class="synapse__bg-overlay"></div>
+      <div class="container relative z-10">
         <h2 class="section__heading comic-heading text-yellow"
-          style="text-shadow: 2px 2px 0 var(--c-magenta), -2px -2px 0 var(--c-cyan);">PAST ANOMALIES</h2>
-        <p class="section__sub" style="color: #fff; text-shadow: 1px 1px 2px #000;">Snapshots from previous Makeathon
-          editions.</p>
+          style="text-shadow: 2px 2px 0 var(--c-magenta), -2px -2px 0 var(--c-cyan);">ABOUT SYNAPSE CLUB</h2>
 
-        <div class="gallery-swiper swiper gallery-swiper-top" id="gallery-swiper-top">
-          <div class="swiper-wrapper" id="gallery-wrapper-top">
-            <!-- Slides injected via js/sections/gallery.js -->
-          </div>
-        </div>
+        <div class="synapse__layout">
+          <article class="synapse__card">
+            <span class="synapse__tag">IOT &amp; ROBOTICS CLUB &middot; GLA UNIVERSITY</span>
+            <h3 class="synapse__title">Where Ideas Get Built</h3>
+            <p class="synapse__body">
+              Synapse is the IoT and Robotics Club of GLA University &mdash; a student community that builds with
+              sensors, circuits, robots and code, and turns curiosity into working prototypes.
+            </p>
+            <p class="synapse__body">
+              Synapse is the club organising the entire Tech-A-Week 1.0 &mdash; the <strong>Ideathon</strong>,
+              <strong>Tech Debate</strong>, <strong>Project Exhibition</strong> and both workshops &mdash; in
+              collaboration with the AI, Cloud and Cyber clubs and Meraki Chronicles.
+            </p>
+          </article>
 
-        <div class="gallery-swiper swiper gallery-swiper-bottom" id="gallery-swiper-bottom">
-          <div class="swiper-wrapper" id="gallery-wrapper-bottom">
-            <!-- Slides injected via js/sections/gallery.js -->
+          <!-- Add Synapse Club images here: replace each .synapse__slot with an <img class="synapse__img"> -->
+          <div class="synapse__slots" aria-label="Synapse Club images">
+            <figure class="synapse__slot" aria-hidden="true"></figure>
+            <figure class="synapse__slot" aria-hidden="true"></figure>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-       SECTION 5 — PROBLEM STATEMENTS
-  ═══════════════════════════════════════════════════════════ -->
-    <section id="problems" class="section section--problems" aria-label="Dimensions">
+    <!-- SECTION 5 — REGISTER NOW -->
+    <section id="events" class="section section--events" aria-label="Register now">
+      <div class="container relative z-10">
+        <h2 class="section__heading comic-heading">REGISTER NOW</h2>
+        <p class="section__sub">Registrations open soon for all events &middot; Dates revealing soon</p>
+
+        <p class="events__eligibility" role="note">
+          <strong>GLA University students only.</strong> Students from other colleges are not allowed to participate.
+        </p>
+
+        <div class="events__grid">
+
+          <!-- IDEATHON -->
+          <article class="event-card event-card--red" id="event-ideathon" aria-labelledby="ideathon-title">
+            <header class="event-card__head">
+              <span class="event-card__kicker">EVENT</span>
+              <h3 class="event-card__title" id="ideathon-title">Ideathon</h3>
+            </header>
+            <div class="event-card__clubs">
+              <span class="event-card__label">Organising Clubs</span>
+              <p>Collaboration between AI, Cloud, Cyber and FUSION (IoT, Robotics &amp; Drones) Clubs.</p>
+            </div>
+            <dl class="event-card__details">
+              <div>
+                <dt>Objective</dt>
+                <dd>Early-stage innovation and problem pitching focusing on tech-driven solutions to real-world
+                  challenges.</dd>
+              </div>
+              <div>
+                <dt>Team Structure</dt>
+                <dd>2&ndash;4 students per team.</dd>
+              </div>
+              <div>
+                <dt>Pitch Format</dt>
+                <dd>8 minutes total per team: a 5-minute presentation (maximum 7-slide PPT outlining the problem,
+                  target audience, tech architecture and proposed solution) followed by a 3-minute Q&amp;A with the
+                  jury.</dd>
+              </div>
+              <div>
+                <dt>Audience Interaction</dt>
+                <dd>Presentations are conducted openly in front of all participants, and the audience can ask
+                  questions to the presenting team.</dd>
+              </div>
+            </dl>
+            <p class="event-card__status"><span aria-hidden="true"></span>Registration opening soon</p>
+          </article>
+
+          <!-- TECH DEBATE -->
+          <article class="event-card event-card--cyan" id="event-debate" aria-labelledby="debate-title">
+            <header class="event-card__head">
+              <span class="event-card__kicker">EVENT</span>
+              <h3 class="event-card__title" id="debate-title">Tech Debate</h3>
+            </header>
+            <div class="event-card__clubs">
+              <span class="event-card__label">Organising Clubs</span>
+              <p>Collaboration between Synapse (IoT &amp; Robotics Club), Meraki Chronicles (Literature Club) and FUSION (IoT,
+                Robotics &amp; Drones) Club.</p>
+            </div>
+            <dl class="event-card__details">
+              <div>
+                <dt>Objective</dt>
+                <dd>A technical debate for B.Tech 1st Year (AIML, CSE, ECE, AI) on contemporary AI and tech topics.
+                </dd>
+              </div>
+              <div>
+                <dt>Format &amp; Teams</dt>
+                <dd>4 students per team. Matches are 10&ndash;12 minutes long, consisting of opening statements, a
+                  rebuttal round and judges&apos; Q&amp;A.</dd>
+              </div>
+              <div>
+                <dt>Flow</dt>
+                <dd>Round 1 (Screening): 10:30 AM &ndash; 1:00 PM.<br>Final Round: 2:40 PM &ndash; 4:40 PM.</dd>
+              </div>
+              <div>
+                <dt>Debate Topics</dt>
+                <dd>Not decided yet. Every club will have different topics &mdash; revealing soon.</dd>
+              </div>
+            </dl>
+            <p class="event-card__status"><span aria-hidden="true"></span>Registration opening soon</p>
+          </article>
+
+          <!-- PROJECT EXHIBITION -->
+          <article class="event-card event-card--magenta" id="event-exhibition" aria-labelledby="exhibition-title">
+            <header class="event-card__head">
+              <span class="event-card__kicker">EVENT</span>
+              <h3 class="event-card__title" id="exhibition-title">Project Exhibition</h3>
+            </header>
+            <div class="event-card__clubs">
+              <span class="event-card__label">Organising Club</span>
+              <p>Completely organised by the FUSION Club (IoT, Robotics &amp; Drones).</p>
+            </div>
+            <dl class="event-card__details">
+              <div>
+                <dt>Objective</dt>
+                <dd>A physical tech showcase where students can exhibit their innovative hardware projects.
+                </dd>
+              </div>
+              <div>
+                <dt>Focus Area</dt>
+                <dd>Hands-on prototypes and functional tech models. Innovative hardware projects only.</dd>
+              </div>
+            </dl>
+            <p class="event-card__status"><span aria-hidden="true"></span>Registration opening soon</p>
+          </article>
+
+        </div>
+
+        <!-- WORKSHOPS -->
+        <div class="workshops" aria-labelledby="workshops-title">
+          <div class="workshops__head">
+            <h3 class="workshops__title" id="workshops-title">Workshops</h3>
+            <p class="workshops__speaker"><span>Speaker</span> Revealing Soon</p>
+          </div>
+          <div class="workshops__grid">
+            <article class="workshop-card workshop-card--yellow">
+              <span class="workshop-card__kicker">Workshop 1</span>
+              <h4 class="workshop-card__title">IoT &amp; AI</h4>
+              <p class="workshop-card__clubs">By the IoT and AI Clubs</p>
+              <p class="workshop-card__meta">Date &amp; speaker revealing soon</p>
+            </article>
+            <article class="workshop-card workshop-card--cyan">
+              <span class="workshop-card__kicker">Workshop 2</span>
+              <h4 class="workshop-card__title">AI, Cloud &amp; Cyber</h4>
+              <p class="workshop-card__clubs">By the AI, Cloud and Cyber Clubs</p>
+              <p class="workshop-card__meta">Date &amp; speaker revealing soon</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6 — MENTORS -->
+    <section id="mentors" class="section section--sponsorship" aria-label="Mentors">
       <div class="container">
-        <div class="track-selector" id="track-selector" aria-label="Track selector">
-          <div class="track-selector__ui" id="track-selector-ui" aria-hidden="false"></div>
-        </div>
+        <h2 class="section__heading comic-heading text-cyan">MENTORING BY INDUSTRY LEADERS</h2>
+        <p class="section__sub">Mentors revealing soon</p>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-       SECTION 6 — SPONSORSHIP
-  ═══════════════════════════════════════════════════════════ -->
-    <section id="sponsorship" class="section section--sponsorship" aria-label="Sponsorship">
-      <div class="container">
-        <h2 class="section__heading comic-heading text-cyan">POWERED BY INDUSTRY LEADERS</h2>
-
-
-        <div class="partners-container">
-
-          <!-- GOLD SPONSORS -->
-          <div class="partner__section">
-            <h3 class="partner__category text-yellow">Gold Sponsors</h3>
-            <div class="partner__grid">
-              <a href="https://www.jeyachandran.com/?srsltid=AfmBOorU6SC4BFmQ0qg3zJLT0NM-Goc7ovATHSUpR0-vsYEEbFp-dXSL" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper">
-                  <img src="assets/partners/JT-01.webp" alt="Jeyachandran Gold Sponsor" class="partner__logo" />
-                </div>
-              </a>
-              <a href="https://onlinebanking.cub.bank.in/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper">
-                  <img src="assets/partners/CUB.png" alt="CUB Ltd Gold Sponsor" class="partner__logo" />
-                </div>
-              </a>
-              <a href="https://www.idp.com/india/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper">
-                  <img src="assets/partners/IDP_logo2_original.png" alt="IDP Gold Sponsor" class="partner__logo" />
-                </div>
-              </a>
-              <a href="https://www.unixperts.com/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper">
-                  <img src="assets/partners/uniexpert.jpeg" alt="UniXperts Gold Sponsor" class="partner__logo" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- SILVER SPONSOR -->
-          <div class="partner__section">
-            <h3 class="partner__category text-cyan">Silver Sponsor</h3>
-            <div class="partner__grid">
-              <a href="https://www.ricchierichinvestments.com/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper">
-                  <img src="assets/partners/richee.jpeg" alt="Richie Rich Investments" class="partner__logo" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- BRONZE PARTNERS -->
-          <div class="partner__section">
-            <h3 class="partner__category text-red">Bronze Partners</h3>
-            <div class="partner__grid">
-              <a href="https://codecrafters.io/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper">
-                  <img src="assets/partners/Codecrafters.jpg" alt="Codecrafters Logo" class="partner__logo" />
-                </div>
-              </a>
-              <a href="https://gen.xyz/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper">
-                  <img src="assets/partners/xyz%20logo.png" alt=".XYZ Logo" class="partner__logo" />
-                </div>
-              </a>
-              <a href="https://www.interviewcake.com/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper">
-                  <img src="assets/partners/internview%20cake%20logo.png" alt="Interview Cake Logo"
-                    class="partner__logo" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- AUTOMATION & WORKFLOW PARTNER + PRODUCT PARTNER (side by side) -->
-          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem;">
-            <!-- AUTOMATION & WORKFLOW PARTNER -->
-            <div class="partner__section" style="width: auto;">
-              <h3 class="partner__category text-magenta">Automation &amp; Workflow Partner</h3>
-              <div class="partner__grid" style="margin-top: 0;">
-                <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                  <div class="partner__logo-wrapper">
-                    <img src="assets/partners/n8n_pink+black_logo.png" alt="n8n Logo" class="partner__logo" />
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <!-- PRODUCT PARTNER -->
-            <div class="partner__section" style="width: auto;">
-              <h3 class="partner__category text-magenta">Product Partner</h3>
-              <div class="partner__grid" style="margin-top: 0;">
-                <a href="https://pcbcupid.com" target="_blank" rel="noopener noreferrer" class="partner__card">
-                  <div class="partner__logo-wrapper">
-                    <img src="assets/partners/pcb.png" alt="PCB Cupid" class="partner__logo" />
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- BEVERAGE PARTNER -->
-          <div class="partner__section">
-            <h3 class="partner__category text-red">Beverage Partner</h3>
-            <div class="partner__grid">
-              <a href="https://www.haggfoods.com/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper">
-                  <img src="assets/partners/haggfoods.png" alt="Hagg Foods Logo" class="partner__logo" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- INTERNSHIP PARTNERS -->
-          <div class="partner__section">
-            <h3 class="partner__category text-magenta">Internship Partners</h3>
-            <div class="partner__grid">
-              <a href="https://www.marketview360.io/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper">
-                  <img src="assets/industry_logos/marketview360.jpeg" alt="Marketview360 Logo" class="partner__logo" />
-                </div>
-              </a>
-              <a href="https://www.upcheck.in/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper" style="padding: 0.1rem;">
-                  <img src="assets/industry_logos/upcheck.jpeg" alt="Upcheck Logo" class="partner__logo" />
-                </div>
-              </a>
-
-            </div>
-          </div>
-
-          <!-- PLATFORM PARTNER + CODING PARTNER (side by side) -->
-          <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 4rem;">
-            <!-- PLATFORM PARTNER -->
-            <div class="partner__section" style="width: auto;">
-              <h3 class="partner__category text-magenta"
-                style="min-height: 3.2rem; display: flex; align-items: center; justify-content: center; text-align: center; width: 100%;">
-                Platform Partner</h3>
-              <div class="partner__grid" style="margin-top: 0; flex: 1; display: flex; align-items: center; justify-content: center;">
-                <a href="https://www.geeksforgeeks.org/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                  <div class="partner__logo-wrapper">
-                    <img src="assets/partners/Gfg%20logo.jpg.jpeg" alt="GeeksforGeeks Logo" class="partner__logo" />
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <!-- CODING PARTNER -->
-            <div class="partner__section" style="width: auto;">
-              <h3 class="partner__category text-cyan"
-                style="min-height: 3.2rem; display: flex; align-items: center; justify-content: center; text-align: center; width: 100%;">
-                Coding Partner</h3>
-              <div class="partner__grid" style="margin-top: 0; flex: 1; display: flex; align-items: center; justify-content: center;">
-                <a href="https://www.codechef.com/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                  <div class="partner__logo-wrapper">
-                    <img src="assets/industry_logos/codechef.png" alt="CodeChef Logo" class="partner__logo" />
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- END PLATFORM/CODING ROW -->
-
-          <!-- DIGITAL TRANSFORMATION PARTNER -->
-          <div class="partner__section">
-            <h3 class="partner__category text-red">Digital Transformation Partner</h3>
-            <div class="partner__grid">
-              <a href="https://www.softrateglobal.com" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper" style="padding: 0.1rem;">
-                  <img src="assets/industry_logos/softrate.jpeg" alt="Softrate Logo" class="partner__logo" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- MEDIA PARTNER -->
-          <div class="partner__section">
-            <h3 class="partner__category text-yellow">Media Partner</h3>
-            <div class="partner__grid">
-              <a href="https://eventopia.in/" target="_blank" rel="noopener noreferrer" class="partner__card">
-                <div class="partner__logo-wrapper">
-                  <img src="assets/partners/Eventopia%20logo.png" alt="Eventopia Logo" class="partner__logo" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
-       SECTION 7 — FAQs (SPIDER-VERSE)
-  ═══════════════════════════════════════════════════════════ -->
+    <!-- SECTION 7 — FAQ -->
     <section id="faq" class="section section--faq" aria-label="FAQ">
       <div class="container">
         <h2 class="section__heading comic-heading text-cyan">FREQUENTLY ASKED QUESTIONS</h2>
@@ -715,452 +571,21 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-       SECTION 8 — OUR TEAM
-  ═══════════════════════════════════════════════════════════ -->
+    <!-- SECTION 8 — THE CREW -->
     <section id="team" class="section section--team" aria-label="The Crew">
-      <!-- Faint web-pattern background -->
       <div class="team__web-bg" aria-hidden="true"></div>
 
       <div class="container">
         <h2 class="section__heading comic-heading">THE CREW</h2>
-        <p class="section__sub">The powerhouses coordinating this dimension's Makeathon.</p>
+        <p class="section__sub">The people behind Tech-A-Week 1.0.</p>
 
-        <!-- Team Tabs -->
-        <div class="team__tabs" role="tablist">
-          <button class="team__tab active" data-team="race" role="tab" aria-selected="true">RACE</button>
-          <button class="team__tab" data-team="iete" role="tab" aria-selected="false">IETE-SF</button>
-          <button class="team__tab" data-team="ecea" role="tab" aria-selected="false">ECEA</button>
-        </div>
-
-        <!-- RACE Panel -->
-        <div class="team__panel active" data-team="race" role="tabpanel">
-          <div class="team__grid" id="team-grid-race"></div>
-        </div>
-
-        <!-- IETE-SF Panel -->
-        <div class="team__panel" data-team="iete" role="tabpanel">
-          <div class="team__grid" id="team-grid-iete"></div>
-        </div>
-
-        <!-- ECEA Panel -->
-        <div class="team__panel" data-team="ecea" role="tabpanel">
-          <div class="team__grid" id="team-grid-ecea"></div>
+        <div class="team__panel active" id="team-panel">
+          <div class="team__grid" id="team-grid"></div>
         </div>
       </div>
     </section>
 
   </main>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       SECTION 9 FEEDBACK
-  ═══════════════════════════════════════════════════════════ -->
-  <style>
-    /* ── Section wrapper ── */
-    .feedback-section {
-      padding: var(--sp-xl, 5rem) 0 var(--sp-2xl, 7rem);
-      position: relative;
-      border-top: 2px solid rgba(255, 255, 255, 0.06);
-    }
-
-    /* ── Tag label ── */
-    .feedback-section__tag {
-      font-family: var(--ff-body);
-      font-weight: 600;
-      font-size: 0.75rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--c-cyan);
-      text-align: center;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-    }
-
-    .feedback-section__tag::before,
-    .feedback-section__tag::after {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--c-cyan);
-      opacity: 0.6;
-    }
-
-    /* ── Main heading ── */
-    .feedback-section__heading {
-      font-family: var(--ff-display);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #ffffff;
-      text-shadow: 3px 3px 0 rgba(255, 0, 85, 0.35);
-      text-align: center;
-      margin-bottom: 0.75rem;
-    }
-
-    /* ── Sub caption ── */
-    .feedback-section__sub {
-      font-family: var(--ff-body);
-      font-size: clamp(0.9rem, 1.8vw, 1.05rem);
-      color: var(--c-text-dim, rgba(232, 234, 246, 0.55));
-      text-align: center;
-      margin-bottom: 3rem;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ── Glassmorphism card ── */
-    .feedback-card {
-      max-width: 580px;
-      margin: 0 auto;
-      background: rgba(14, 16, 32, 0.55);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-top: 2px solid var(--c-cyan);
-      backdrop-filter: blur(18px) saturate(140%);
-      -webkit-backdrop-filter: blur(18px) saturate(140%);
-      border-radius: 14px;
-      padding: 2.5rem 2rem;
-      box-shadow: 0 0 40px rgba(0, 240, 255, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-
-    /* ── Star row ── */
-    .feedback-stars {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-
-    /* Each star button */
-    .feedback-star-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      line-height: 1;
-      color: rgba(255, 255, 255, 0.15);
-      transition: color 0.18s ease,
-        transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
-        filter 0.18s ease;
-      position: relative;
-    }
-
-    /* Filled state */
-    .feedback-star-btn.filled {
-      color: var(--c-yellow, #fcee0a);
-      filter: drop-shadow(0 0 8px rgba(252, 238, 10, 0.6));
-    }
-
-    /* Hover preview */
-    .feedback-star-btn.preview {
-      color: rgba(252, 238, 10, 0.5);
-    }
-
-    .feedback-star-btn:hover {
-      transform: scale(1.25) rotate(-5deg);
-    }
-
-    /* Star slam animation on selection */
-    @keyframes starSlam {
-      0% {
-        transform: scale(0.6) rotate(-15deg);
-      }
-
-      60% {
-        transform: scale(1.4) rotate(5deg);
-      }
-
-      100% {
-        transform: scale(1) rotate(0deg);
-      }
-    }
-
-    .feedback-star-btn.slam {
-      animation: starSlam 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
-    }
-
-    /* ── Rating label ── */
-    .feedback-rating-label {
-      font-family: var(--ff-display);
-      font-size: 1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--c-yellow, #fcee0a);
-      text-align: center;
-      min-height: 1.4em;
-      margin-bottom: 1.5rem;
-      transition: opacity 0.3s ease;
-    }
-
-    /* ── Label above textarea ── */
-    .feedback-label {
-      display: block;
-      font-family: var(--ff-body);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--c-text-dim, rgba(232, 234, 246, 0.55));
-      margin-bottom: 0.6rem;
-    }
-
-    /* ── Textarea ── */
-    .feedback-textarea {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      color: var(--c-text, #e8eaf6);
-      font-family: var(--ff-body);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      padding: 0.85rem 1rem;
-      resize: vertical;
-      transition: border-color 0.25s ease, box-shadow 0.25s ease;
-      outline: none;
-    }
-
-    .feedback-textarea::placeholder {
-      color: rgba(232, 234, 246, 0.2);
-      font-style: italic;
-    }
-
-    .feedback-textarea:focus {
-      border-color: var(--c-cyan);
-      box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.1);
-    }
-
-    /* ── Char count ── */
-    .feedback-charcount {
-      font-family: var(--ff-mono, monospace);
-      font-size: 0.7rem;
-      color: rgba(232, 234, 246, 0.25);
-      text-align: right;
-      margin-top: 0.3rem;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.05em;
-    }
-
-    /* ── Submit button — matches site's red CTA style ── */
-    .feedback-submit {
-      display: block;
-      width: 100%;
-      padding: 0.9rem 1.5rem;
-      font-family: var(--ff-display);
-      font-size: 1.1rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #ffffff;
-      background: linear-gradient(135deg, #ff0055 0%, #cc0044 100%);
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      box-shadow: 0 6px 24px rgba(255, 0, 85, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.12);
-      transition: transform 0.2s ease,
-        box-shadow 0.2s ease,
-        opacity 0.2s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Shimmer sweep — matches existing hero CTA */
-    .feedback-submit::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 200%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .feedback-submit:not(:disabled):hover::before {
-      left: 100%;
-    }
-
-    .feedback-submit:not(:disabled):hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 36px rgba(255, 0, 85, 0.5);
-    }
-
-    .feedback-submit:not(:disabled):active {
-      transform: translateY(-1px);
-    }
-
-    /* Disabled state */
-    .feedback-submit:disabled {
-      opacity: 0.35;
-      cursor: not-allowed;
-    }
-
-    /* ── Result message ── */
-    .feedback-result {
-      margin-top: 1.2rem;
-      font-family: var(--ff-body);
-      font-size: 0.9rem;
-      text-align: center;
-      min-height: 1.4em;
-      letter-spacing: 0.04em;
-    }
-
-    .feedback-result.success {
-      color: var(--c-green, #00ff73);
-    }
-
-    .feedback-result.error {
-      color: #ff6b6b;
-    }
-
-    /* ── Aggregate display ── */
-    .feedback-aggregate {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 2rem;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      flex-wrap: wrap;
-    }
-
-    .feedback-aggregate.visible {
-      opacity: 1;
-    }
-
-    .feedback-aggregate__stars {
-      color: var(--c-yellow, #fcee0a);
-      font-size: 1.1rem;
-      filter: drop-shadow(0 0 6px rgba(252, 238, 10, 0.5));
-      letter-spacing: 0.1em;
-    }
-
-    .feedback-aggregate__score {
-      font-family: var(--ff-display);
-      font-size: 1.1rem;
-      letter-spacing: 0.08em;
-      color: #ffffff;
-    }
-
-    .feedback-aggregate__count {
-      font-family: var(--ff-body);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--c-text-dim, rgba(232, 234, 246, 0.55));
-    }
-
-    /* ── Scroll-reveal (matches site's IntersectionObserver pattern) ── */
-    .feedback-section .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.7s ease,
-        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .feedback-section .reveal.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ── Thank You State ── */
-    .feedback-thankyou {
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    .feedback-thankyou__icon {
-      font-size: 3rem;
-      display: block;
-      text-align: center;
-      margin-bottom: 1rem;
-      animation: abdomenBreathe 2s ease-in-out infinite;
-    }
-
-    @keyframes abdomenBreathe {
-      0% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.1);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    .feedback-thankyou__heading {
-      font-family: var(--ff-display);
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      text-transform: uppercase;
-      color: #ffffff;
-      text-shadow: 3px 3px 0 rgba(255, 0, 85, 0.35);
-      margin-bottom: 0.75rem;
-    }
-
-    .feedback-thankyou__sub {
-      font-family: var(--ff-body);
-      color: var(--c-text-dim, rgba(232, 234, 246, 0.55));
-    }
-
-    /* ── Reduced motion ── */
-    @media (prefers-reduced-motion: reduce) {
-
-      .feedback-star-btn,
-      .feedback-submit,
-      .feedback-section .reveal,
-      .feedback-thankyou__icon {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 0 !important;
-      }
-    }
-  </style>
-
-  <section id="feedback" class="feedback-section">
-    <div class="container">
-      <p class="feedback-section__tag reveal">DROP A BYTE</p>
-      <h2 class="feedback-section__heading reveal">RATE OUR WEBSITE</h2>
-      <p class="feedback-section__sub reveal">
-        How did we do? Your feedback shapes the next dimension.
-      </p>
-      <div class="feedback-card reveal">
-        <div class="feedback-stars" role="group" aria-label="Star rating">
-          <!-- 5 star buttons, rendered by JS -->
-        </div>
-        <p class="feedback-rating-label" aria-live="polite"></p>
-
-        <label class="feedback-label" for="feedback-text">
-          LEAVE A SUGGESTION (OPTIONAL)
-        </label>
-        <textarea id="feedback-text" class="feedback-textarea" rows="4" maxlength="500"
-          placeholder="Tell us what worked, what didn't, or what you'd love to see..."></textarea>
-        <p class="feedback-charcount"><span id="feedback-chars">0</span> / 500</p>
-
-        <button class="feedback-submit" id="feedback-submit-btn" disabled>
-          SUBMIT FEEDBACK
-        </button>
-
-        <div class="feedback-result" id="feedback-result" aria-live="polite"></div>
-      </div>
-
-      <div class="feedback-aggregate" id="feedback-aggregate">
-        <span class="feedback-aggregate__stars" id="agg-stars">★★★★★</span>
-        <span class="feedback-aggregate__score" id="agg-score"></span>
-        <span class="feedback-aggregate__count" id="agg-count"></span>
-      </div>
-    </div>
-  </section>
 
   <!-- ═══════════════════════════════════════════════════════════
        TEAM CREDITS SECTION
@@ -1336,552 +761,95 @@
   <section class="credits-section" aria-label="Website Credits">
     <div class="container">
       <p class="credits__label">WEBSITE DESIGNED AND DEVELOPED BY</p>
-
       <div class="credits__row">
-
-        <!-- Sudhan S — Lead Developer (highlighted card) -->
         <div class="credits__item">
-          <a class="credits__lead" href="#team" onclick="event.preventDefault(); scrollToMember('race', 'sudhan');"
-            aria-label="Sudhan S – Lead Developer">
-            <span class="credits__lead-name">Sudhan S</span>
-            <span class="credits__lead-subtitle">LEAD DEVELOPER</span>
-          </a>
-          <span class="credits__sep">·</span>
+          <div class="credits__lead">
+            <span class="credits__lead-name">SHAHVEZ</span>
+            <span class="credits__lead-subtitle">CSE AIML &middot; 2ND YEAR</span>
+          </div>
         </div>
-
-        <!-- Surya K -->
-        <div class="credits__item">
-          <a class="credits__name" href="#team" onclick="event.preventDefault(); scrollToMember('ecea', 'surya');">Surya
-            K</a>
-          <span class="credits__sep">·</span>
-        </div>
-
-        <!-- Rohith Kanna -->
-        <div class="credits__item">
-          <a class="credits__name" href="#team"
-            onclick="event.preventDefault(); scrollToMember('iete', 'rohith');">Rohith Kanna</a>
-          <span class="credits__sep">·</span>
-        </div>
-
-        <!-- Mahalakshmi L -->
-        <div class="credits__item">
-          <a class="credits__name" href="#team"
-            onclick="event.preventDefault(); scrollToMember('iete', 'mahalakshmi');">Mahalakshmi L</a>
-          <span class="credits__sep">·</span>
-        </div>
-
-        <!-- B S Aarti -->
-        <div class="credits__item">
-          <a class="credits__name" href="#team" onclick="event.preventDefault(); scrollToMember('race', 'aarti');">B S
-            Aarti</a>
-          <span class="credits__sep">·</span>
-        </div>
-
-        <!-- Rithvik R -->
-        <div class="credits__item">
-          <a class="credits__name" href="#team"
-            onclick="event.preventDefault(); scrollToMember('race', 'rithvik');">Rithvik R</a>
-          <span class="credits__sep">·</span>
-        </div>
-
-        <!-- N Yaazhinii -->
-        <div class="credits__item">
-          <a class="credits__name" href="#team" onclick="event.preventDefault(); scrollToMember('ecea', 'yaazhinii');">N
-            Yaazhinii</a>
-          <span class="credits__sep">·</span>
-        </div>
-
-        <!-- Karunya D (no trailing sep — last item) -->
-        <div class="credits__item">
-          <a class="credits__name" href="#team"
-            onclick="event.preventDefault(); scrollToMember('iete', 'karunya');">Karunya D</a>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <script>
-    /**
-     * Scrolls to the #team section, activates the correct tab,
-     * and slides the Swiper carousel so the target member is
-     * the centred (active) card.
-     * @param {string} teamTab   - 'race' | 'iete' | 'ecea'
-     * @param {string} memberKey - partial lower-case name to match
-     */
-    function scrollToMember(teamTab, memberKey) {
-      const teamSection = document.getElementById('team');
-      if (!teamSection) return;
-
-      // 1. Switch to the correct tab if not already active
-      const tab = document.querySelector(`.team__tab[data-team="${teamTab}"]`);
-      if (tab && !tab.classList.contains('active')) {
-        tab.click();
-      }
-
-      // 2. Find the swiper element and navigate to the member's slide
-      setTimeout(() => {
-        const swiperId = `swiper-team-panel-${teamTab}`;
-        const swiperEl = document.getElementById(swiperId);
-        if (!swiperEl || !swiperEl.swiper) return;
-
-        const swiper = swiperEl.swiper;
-
-        // Force Swiper to recalculate layout now that the panel is visible
-        swiper.update();
-
-        // Find the matching real (non-clone) slide
-        const realSlides = Array.from(
-          swiperEl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)')
-        );
-        const matchSlide = realSlides.find(slide => {
-          const nameEl = slide.querySelector('.team-card__name');
-          return nameEl && nameEl.textContent.toLowerCase().includes(memberKey.toLowerCase());
-        });
-
-        if (!matchSlide) return;
-
-        // Swiper stamps data-swiper-slide-index on every real slide —
-        // this is the exact value slideToLoop() expects.
-        const loopIdx = parseInt(matchSlide.getAttribute('data-swiper-slide-index'), 10);
-        const fallbackIdx = realSlides.indexOf(matchSlide);
-        const targetIdx = Number.isFinite(loopIdx) ? loopIdx : fallbackIdx;
-
-        // Navigate the carousel to centre the target card
-        swiper.slideToLoop(targetIdx, 600);
-
-        // 3. Scroll the swiper strip itself into the centre of the viewport
-        //    so the cards are fully visible (not hidden behind the heading/tabs)
-        swiperEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 300);
-    }
-  </script>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       SECTION 10 FOOTER
-  ═══════════════════════════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer id="footer" class="section section--footer" aria-label="Footer">
     <div class="container footer__inner">
 
-      <!-- ── Top Row: 3-Column Layout ── -->
       <div class="footer__grid">
 
-        <!-- LEFT — Event Info & Map -->
+        <!-- LEFT — Event info & map -->
         <div class="footer__col" style="align-items: flex-start; text-align: left;">
-          <h3 class="footer__heading" style="margin-bottom: 0.2rem; white-space: nowrap;">MAKEATHON <span
-              class="text-cyan">7.0</span></h3>
+          <h3 class="footer__heading" style="margin-bottom: 0.2rem; white-space: nowrap;">TECH-A-WEEK <span
+              class="text-cyan">1.0</span></h3>
           <h4
             style="font-family: var(--ff-display); font-size: 0.85rem; color: var(--c-text); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">
-            A 24-HOUR HACKATHON</h4>
+            A FLAGSHIP INNOVATION WEEK</h4>
           <p class="footer__text"
-            style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.5rem; text-align: left;">National level
-            24-hour hardware & software creation sprint organized by the Department of Electronics & Communication
-            Engineering.</p>
+            style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.5rem; text-align: left;">The flagship
+            innovation and tech-driven week of GLA University, Greater Noida &mdash; organised by the FUSION Club.</p>
           <div style="width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
-            <iframe
-              src="https://maps.google.com/maps?q=Sri+Venkateswara+College+of+Engineering+Sriperumbudur&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            <iframe title="Map of GLA University, Greater Noida"
+              src="https://maps.google.com/maps?q=GLA+University+Greater+Noida+Knowledge+Park+II&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%" height="160"
               style="border:0; display: block; opacity: 0.6; filter: grayscale(1) invert(1) contrast(1.2);"
               allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
 
-        <!-- CENTER — Quick Links & Coordinators -->
-        <div class="footer__col"
-          style="align-items: flex-start; text-align: left; display: flex; flex-direction: column; justify-content: space-between; gap: 2rem;">
-
-          <div style="width: 100%;">
-            <h4 class="footer__subheading"
-              style="width: 100%; border-bottom: 1px solid var(--c-cyan); padding-bottom: 0.5rem; margin-bottom: 1rem; text-align: left;">
-              QUICK LINKS</h4>
-            <ul class="footer__links" style="text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;">
-              <li><a href="#hero">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#timeline">Timeline</a></li>
-              <li><a href="#problems">Problem Statements</a></li>
-              <li><a href="#sponsorship">Sponsors</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#team">Team</a></li>
-              <li><a href="#faq">FAQ</a></li>
-            </ul>
-          </div>
-
-          <div style="width: 100%;">
-            <h4 class="footer__subheading"
-              style="width: 100%; border-bottom: 1px solid var(--c-cyan); padding-bottom: 0.5rem; margin-bottom: 1.2rem; text-align: left;">
-              STUDENT COORDINATORS</h4>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: left;">
-              <div>
-                <p style="font-family: var(--ff-body); color: var(--c-text); font-size: 0.85rem; margin-bottom: 2px;">
-                  Roshan M</p>
-                <p style="font-family: var(--ff-body); color: var(--c-red); font-size: 0.85rem; font-weight: bold;">
-                  98410 92274</p>
-              </div>
-              <div>
-                <p style="font-family: var(--ff-body); color: var(--c-text); font-size: 0.85rem; margin-bottom: 2px;">
-                  Adarsh S</p>
-                <p style="font-family: var(--ff-body); color: var(--c-red); font-size: 0.85rem; font-weight: bold;">
-                  73059 70106</p>
-              </div>
-              <div>
-                <p style="font-family: var(--ff-body); color: var(--c-text); font-size: 0.85rem; margin-bottom: 2px;">
-                  Yaaminy S K</p>
-                <p style="font-family: var(--ff-body); color: var(--c-magenta); font-size: 0.85rem; font-weight: bold;">
-                  63809 89594</p>
-              </div>
-              <div>
-                <p style="font-family: var(--ff-body); color: var(--c-text); font-size: 0.85rem; margin-bottom: 2px;">
-                  Roobuck Rao C</p>
-                <p style="font-family: var(--ff-body); color: var(--c-magenta); font-size: 0.85rem; font-weight: bold;">
-                  81482 04922</p>
-              </div>
-              <div>
-                <p style="font-family: var(--ff-body); color: var(--c-text); font-size: 0.85rem; margin-bottom: 2px;">
-                  Mohammed Raeef</p>
-                <p style="font-family: var(--ff-body); color: var(--c-cyan); font-size: 0.85rem; font-weight: bold;">
-                  91501 58647</p>
-              </div>
-              <div>
-                <p style="font-family: var(--ff-body); color: var(--c-text); font-size: 0.85rem; margin-bottom: 2px;">
-                  Harinee V T</p>
-                <p style="font-family: var(--ff-body); color: var(--c-cyan); font-size: 0.85rem; font-weight: bold;">
-                  73581 20955</p>
-              </div>
-            </div>
-          </div>
+        <!-- CENTER — Quick links -->
+        <div class="footer__col" style="align-items: flex-start; text-align: left;">
+          <h4 class="footer__subheading"
+            style="width: 100%; border-bottom: 1px solid var(--c-cyan); padding-bottom: 0.5rem; margin-bottom: 1rem; text-align: left;">
+            QUICK LINKS</h4>
+          <ul class="footer__links" style="text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#events">Register Now</a></li>
+            <li><a href="#synapse">Synapse Club</a></li>
+            <li><a href="#mentors">Mentors</a></li>
+            <li><a href="#team">Crew</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
         </div>
 
-        <!-- RIGHT — Contact Details & Socials -->
+        <!-- RIGHT — Contact (details to be added) -->
         <div class="footer__col" style="align-items: flex-start; text-align: left;">
           <h4 class="footer__subheading"
             style="width: 100%; border-bottom: 1px solid var(--c-cyan); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
             CONTACT US</h4>
-
-          <p class="footer__text" style="line-height: 1.8; margin-bottom: 2rem;">
-            Sri Venkateswara College of Engineering<br>
-            Post Bag No.1, Pennalur Village<br>
-            Chennai - Bengaluru Highways<br>
-            Sriperumbudur (off Chennai) Tk. - 602 117<br>
-            Tamil Nadu, India
-          </p>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; width: 100%;">
-
-            <!-- RACE -->
-            <div
-              style="border-left: 2px solid var(--c-red); padding-left: 12px; display: flex; flex-direction: column; gap: 8px;">
-              <h5
-                style="font-family: var(--ff-body); color: var(--c-red); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin: 0;">
-                RACE</h5>
-              <div style="display: flex; gap: 8px;">
-                <a href="https://www.instagram.com/race_svce/" target="_blank" rel="noopener noreferrer"
-                  class="social-icon social-icon--ig" style="width: 32px; height: 32px;" aria-label="RACE Instagram">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                    <path
-                      d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.08 4.08 0 011.523.99 4.08 4.08 0 01.99 1.524c.163.46.35 1.26.403 2.43.058 1.265.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.08 4.08 0 01-.99 1.523 4.08 4.08 0 01-1.524.99c-.46.163-1.26.35-2.43.403-1.265.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.08 4.08 0 01-1.523-.99 4.08 4.08 0 01-.99-1.524c-.163-.46-.35-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.08 4.08 0 01.99-1.523A4.08 4.08 0 015.15 2.636c.46-.163 1.26-.35 2.43-.403C8.845 2.175 9.225 2.163 12 2.163zM12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.903.333 4.14.63a6.21 6.21 0 00-2.245 1.462A6.21 6.21 0 00.433 4.337C.136 5.1-.067 5.972.01 7.25.068 8.53.082 8.938.082 12.197c0 3.259.014 3.668.072 4.948.058 1.277.261 2.15.558 2.912a6.21 6.21 0 001.462 2.245 6.21 6.21 0 002.245 1.462c.763.297 1.636.5 2.913.558C8.333 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.277-.058 2.15-.261 2.912-.558a6.21 6.21 0 002.245-1.462 6.21 6.21 0 001.462-2.245c.297-.763.5-1.636.558-2.913.058-1.28.072-1.688.072-4.948s-.014-3.668-.072-4.948c-.058-1.277-.261-2.15-.558-2.912a6.21 6.21 0 00-1.462-2.245A6.21 6.21 0 0019.86.435C19.1.138 18.227-.065 16.95.007 15.668.065 15.259.079 12 .079zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
-                  </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/raic-svce/" target="_blank" rel="noopener noreferrer"
-                  class="social-icon social-icon--li" style="width: 32px; height: 32px;" aria-label="RACE LinkedIn">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                    <path
-                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                </a>
-                <a href="mailto:race@svce.ac.in" class="social-icon social-icon--mail"
-                  style="width: 32px; height: 32px;" aria-label="RACE Email">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                    <path
-                      d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <!-- IETE-SF -->
-            <div
-              style="border-left: 2px solid var(--c-magenta); padding-left: 12px; display: flex; flex-direction: column; gap: 8px;">
-              <h5
-                style="font-family: var(--ff-body); color: var(--c-magenta); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin: 0;">
-                IETE-SF</h5>
-              <div style="display: flex; gap: 8px;">
-                <a href="https://www.instagram.com/ietesf_svce/" target="_blank" rel="noopener noreferrer"
-                  class="social-icon social-icon--ig" style="width: 32px; height: 32px;" aria-label="IETE-SF Instagram">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                    <path
-                      d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.08 4.08 0 011.523.99 4.08 4.08 0 01.99 1.524c.163.46.35 1.26.403 2.43.058 1.265.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.08 4.08 0 01-.99 1.523 4.08 4.08 0 01-1.524.99c-.46.163-1.26.35-2.43.403-1.265.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.08 4.08 0 01-1.523-.99 4.08 4.08 0 01-.99-1.524c-.163-.46-.35-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.08 4.08 0 01.99-1.523A4.08 4.08 0 015.15 2.636c.46-.163 1.26-.35 2.43-.403C8.845 2.175 9.225 2.163 12 2.163zM12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.903.333 4.14.63a6.21 6.21 0 00-2.245 1.462A6.21 6.21 0 00.433 4.337C.136 5.1-.067 5.972.01 7.25.068 8.53.082 8.938.082 12.197c0 3.259.014 3.668.072 4.948.058 1.277.261 2.15.558 2.912a6.21 6.21 0 001.462 2.245 6.21 6.21 0 002.245 1.462c.763.297 1.636.5 2.913.558C8.333 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.277-.058 2.15-.261 2.912-.558a6.21 6.21 0 002.245-1.462 6.21 6.21 0 001.462-2.245c.297-.763.5-1.636.558-2.913.058-1.28.072-1.688.072-4.948s-.014-3.668-.072-4.948c-.058-1.277-.261-2.15-.558-2.912a6.21 6.21 0 00-1.462-2.245A6.21 6.21 0 0019.86.435C19.1.138 18.227-.065 16.95.007 15.668.065 15.259.079 12 .079zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
-                  </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/iete-sf-svce-3199351b7/" target="_blank" rel="noopener noreferrer"
-                  class="social-icon social-icon--li" style="width: 32px; height: 32px;" aria-label="IETE-SF LinkedIn">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                    <path
-                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                </a>
-                <a href="mailto:ietesf@svce.ac.in" class="social-icon social-icon--mail"
-                  style="width: 32px; height: 32px;" aria-label="IETE-SF Email">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                    <path
-                      d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <!-- ECEA -->
-            <div
-              style="border-left: 2px solid var(--c-cyan); padding-left: 12px; display: flex; flex-direction: column; gap: 8px;">
-              <h5
-                style="font-family: var(--ff-body); color: var(--c-cyan); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin: 0;">
-                ECEA</h5>
-              <div style="display: flex; gap: 8px;">
-                <a href="https://www.instagram.com/eceasvce/" target="_blank" rel="noopener noreferrer"
-                  class="social-icon social-icon--ig" style="width: 32px; height: 32px;" aria-label="ECEA Instagram">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                    <path
-                      d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.08 4.08 0 011.523.99 4.08 4.08 0 01.99 1.524c.163.46.35 1.26.403 2.43.058 1.265.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.08 4.08 0 01-.99 1.523 4.08 4.08 0 01-1.524.99c-.46.163-1.26.35-2.43.403-1.265.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.08 4.08 0 01-1.523-.99 4.08 4.08 0 01-.99-1.524c-.163-.46-.35-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.08 4.08 0 01.99-1.523A4.08 4.08 0 015.15 2.636c.46-.163 1.26-.35 2.43-.403C8.845 2.175 9.225 2.163 12 2.163zM12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.903.333 4.14.63a6.21 6.21 0 00-2.245 1.462A6.21 6.21 0 00.433 4.337C.136 5.1-.067 5.972.01 7.25.068 8.53.082 8.938.082 12.197c0 3.259.014 3.668.072 4.948.058 1.277.261 2.15.558 2.912a6.21 6.21 0 001.462 2.245 6.21 6.21 0 002.245 1.462c.763.297 1.636.5 2.913.558C8.333 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.277-.058 2.15-.261 2.912-.558a6.21 6.21 0 002.245-1.462 6.21 6.21 0 001.462-2.245c.297-.763.5-1.636.558-2.913.058-1.28.072-1.688.072-4.948s-.014-3.668-.072-4.948c-.058-1.277-.261-2.15-.558-2.912a6.21 6.21 0 00-1.462-2.245A6.21 6.21 0 0019.86.435C19.1.138 18.227-.065 16.95.007 15.668.065 15.259.079 12 .079zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
-                  </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/ecea-svce-2b49062b7/" target="_blank" rel="noopener noreferrer"
-                  class="social-icon social-icon--li" style="width: 32px; height: 32px;" aria-label="ECEA LinkedIn">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                    <path
-                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                </a>
-                <a href="mailto:ecea@svce.ac.in" class="social-icon social-icon--mail"
-                  style="width: 32px; height: 32px;" aria-label="ECEA Email">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                    <path
-                      d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-          </div>
         </div>
       </div>
 
-      <!-- ── Bottom Bar ── -->
       <div class="footer__bottom">
         <p class="footer__tagline">"With great power comes great innovation."</p>
-        <p class="copyright">&copy; 2026 Makeathon 7.0 — All realities reserved.</p>
+        <p class="copyright">&copy; 2026 Tech-A-Week 1.0 &mdash; GLA University. All realities reserved.</p>
       </div>
-
+    </div>
   </footer>
 
-  <style>
-    @keyframes bell-ring {
-      0%, 100% { transform: rotate(0deg); }
-      15% { transform: rotate(15deg); }
-      30% { transform: rotate(-15deg); }
-      45% { transform: rotate(10deg); }
-      60% { transform: rotate(-10deg); }
-      75% { transform: rotate(5deg); }
-    }
-    .notification-bell svg {
-      animation: bell-ring 2s infinite ease-in-out;
-      transform-origin: top center;
-    }
-    @media (max-width: 768px) {
-      .notification-bell {
-        width: 48px !important;
-        height: 48px !important;
-        bottom: 20px !important;
-        right: 20px !important;
-        border-width: 2.5px !important;
-      }
-      .notification-bell svg {
-        width: 20px !important;
-        height: 20px !important;
-      }
-      .notification-bell div {
-        top: 10px !important;
-        right: 12px !important;
-        width: 9px !important;
-        height: 9px !important;
-        border-width: 2px !important;
-      }
-    }
-  </style>
-  <!-- Floating Notification Bell Button -->
-  <a href="notifications.html" aria-label="Notifications" class="notification-bell" style="position: fixed; bottom: 30px; right: 30px; width: 64px; height: 64px; border-radius: 50%; background: var(--c-yellow, #FFD700); border: 3.5px solid #0A0A0F; box-shadow: 4px 4px 0 #0A0A0F; display: flex; align-items: center; justify-content: center; z-index: 9999; text-decoration: none; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px) scale(1.1)'; this.style.boxShadow='8px 8px 0 #0A0A0F';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='4px 4px 0 #0A0A0F';">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px;">
-      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-      <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-    </svg>
-    <!-- Notification Red Dot -->
-    <div style="position: absolute; top: 14px; right: 16px; width: 12px; height: 12px; background: #E62429; border: 2.5px solid #0A0A0F; border-radius: 50%;"></div>
-  </a>
+  <!-- Registration-opening-soon popup -->
+  <div class="soon-popup-overlay" id="soon-popup" role="dialog" aria-modal="true" aria-labelledby="soon-popup-title"
+    aria-hidden="true">
+    <div class="soon-popup">
+      <div class="soon-popup__accent" aria-hidden="true"></div>
+      <div class="soon-popup__ornament" aria-hidden="true">
+        <span></span><i></i><span></span>
+      </div>
+      <h2 class="soon-popup__title" id="soon-popup-title">REGISTRATION <span>OPENS SOON</span></h2>
+      <hr class="soon-popup__rule" />
+      <p class="soon-popup__desc">Tech-A-Week 1.0 &middot; GLA University<br>Ideathon &middot; Tech Debate &middot;
+        Project Exhibition</p>
+      <p class="soon-popup__note">Open to GLA University students only</p>
+      <button class="soon-popup__btn" id="soon-popup-explore" type="button">EXPLORE</button>
+    </div>
+  </div>
 
   <script src="js/core/hamburger.js"></script>
   <script type="module" src="js/main.js"></script>
   <script src="js/cursor.js"></script>
-  <script type="module" src="js/feedback.js"></script>
-
-  <style>
-    /* Results Popup Modal */
-    .results-popup-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(5, 10, 31, 0.9);
-      backdrop-filter: blur(8px);
-      z-index: 10000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.4s ease, visibility 0.4s ease;
-    }
-    .results-popup-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .results-popup-content {
-      background: var(--ink, #0A0A0F);
-      border: 4px solid var(--ink, #0A0A0F);
-      box-shadow: 10px 10px 0 var(--c-red, #E62429), 20px 20px 0 rgba(0, 61, 165, 0.4);
-      padding: 3.5rem 3rem;
-      text-align: center;
-      max-width: 90%;
-      width: 520px;
-      transform: translateY(50px) scale(0.9);
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
-      overflow: hidden;
-    }
-    .results-popup-content::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(-55deg, transparent, transparent 8px, rgba(255, 255, 255, 0.03) 8px, rgba(255, 255, 255, 0.03) 16px);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .results-popup-accent {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 8px;
-      height: 100%;
-      background: var(--c-red, #E62429);
-      z-index: 1;
-    }
-    .results-popup-overlay.active .results-popup-content {
-      transform: translateY(0) scale(1);
-    }
-    .results-popup-title {
-      font-family: 'Bangers', var(--ff-display, cursive);
-      font-size: 3.2rem;
-      color: #fff;
-      text-shadow: 4px 4px 0 var(--c-red, #E62429), 7px 7px 0 #003DA5;
-      margin-bottom: 1rem;
-      line-height: 1.1;
-      letter-spacing: 0.05em;
-      position: relative;
-      z-index: 2;
-      text-transform: uppercase;
-    }
-    .results-popup-title span {
-      color: var(--c-yellow, #FFD700);
-      text-shadow: 3px 3px 0 var(--c-red, #E62429);
-    }
-    .results-popup-desc {
-      font-family: var(--ff-body, 'Montserrat', sans-serif);
-      color: rgba(255,255,255,0.85);
-      font-size: 1.25rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      text-transform: none;
-      position: relative;
-      z-index: 2;
-      margin-bottom: 2.5rem;
-      line-height: 1.4;
-    }
-    .results-popup-btn-grp {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      position: relative;
-      z-index: 2;
-    }
-    .btn--popup {
-      font-family: 'Bangers', cursive;
-      font-size: 1.5rem;
-      color: #fff;
-      background: transparent;
-      border: 3px solid var(--ink, #0A0A0F);
-      padding: 0.75rem 2rem;
-      cursor: pointer;
-      box-shadow: 5px 5px 0 var(--c-red, #E62429);
-      transition: transform 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      outline: none;
-    }
-    .btn--popup:hover {
-      transform: translateY(-3px);
-    }
-    .btn--popup:active {
-      transform: translateY(2px);
-      box-shadow: 2px 2px 0 var(--c-red, #E62429);
-    }
-    .btn--popup-check {
-      background: var(--c-yellow, #FFD700);
-      color: var(--ink, #0A0A0F);
-      box-shadow: 5px 5px 0 var(--ink, #0A0A0F);
-    }
-    .btn--popup-check:active {
-      box-shadow: 2px 2px 0 var(--ink, #0A0A0F);
-    }
-  </style>
-
-  <div class="results-popup-overlay" id="results-popup">
-    <div class="results-popup-content">
-      <div class="results-popup-accent"></div>
-      
-      <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 0.5rem; position: relative; z-index: 2;">
-        <div style="height: 1px; width: 40px; background: rgba(255,255,255,0.5);"></div>
-        <div style="color: var(--c-yellow, #FFD700); font-size: 1.2rem;">★</div>
-        <div style="height: 1px; width: 40px; background: rgba(255,255,255,0.5);"></div>
-      </div>
-      
-      <h2 class="results-popup-title">THE RESULTS <span>ARE OUT!</span></h2>
-      <hr style="width: 100px; border: none; border-top: 2px solid var(--c-red, #E62429); margin: 0 auto 1.5rem; position: relative; z-index: 2;" />
-      <p class="results-popup-desc">The results are here! (Finally)</p>
-      
-      <div class="results-popup-btn-grp">
-        <button class="btn--popup" id="results-popup-close-btn" type="button" onclick="document.getElementById('results-popup').classList.remove('active');">CLOSE</button>
-        <button class="btn--popup btn--popup-check" onclick="window.location.href='results.html'" type="button">VIEW RESULTS</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    window.addEventListener('load', () => {
-      // Wait for loading screen to clear, then show popup
-      if (!sessionStorage.getItem('resultsPopupShown')) {
-        setTimeout(() => {
-          const popup = document.getElementById('results-popup');
-          if (popup) {
-            popup.classList.add('active');
-            sessionStorage.setItem('resultsPopupShown', 'true');
-          }
-        }, 4000);
-      }
-
-      const closeBtn = document.getElementById('results-popup-close');
-      if(closeBtn) {
-        closeBtn.addEventListener('click', () => {
-          document.getElementById('results-popup').classList.remove('active');
-        });
-      }
-    });
-  </script>
+  <script src="js/core/popup.js"></script>
 </body>
 
 </html>

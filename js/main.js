@@ -25,10 +25,8 @@ import { initLoading } from './sections/loading.js';
 import { initHero } from './sections/hero.js';
 import { initAbout } from './sections/about.js';
 import { initTimeline } from './sections/timeline.js';
-import { initGallery } from './sections/gallery.js';
-import { initProblems } from './sections/problems.js';
+import { initEvents } from './sections/events.js';
 import { initTeam } from './sections/team.js';
-import { initSponsorship } from './sections/sponsorship.js';
 import { initFAQ } from './sections/faq.js';
 
 /**
@@ -49,13 +47,11 @@ async function boot() {
     initHero();
     initAbout();
     initTimeline();
-    initGallery();
-    initProblems();
+    initEvents();
     initTeam();
-    initSponsorship();
     initFAQ();
 
-    console.log('[Makeathon 7.0] All systems online. Welcome to the Creation Zone.');
+    console.log('[Tech-A-Week 1.0] All systems online.');
 }
 
 // Wait for DOM ready
