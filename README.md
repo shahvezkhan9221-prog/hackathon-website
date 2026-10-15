@@ -4,7 +4,7 @@
 
 # MAKE-A-THON 7.0
 
-### 🕷️ *"Anyone can wear the mask."* — Miles Morales
+### 🕷️ *"Anyone can wear the mask."* — Miles Morales..
 
 [![Website](https://img.shields.io/badge/🌐_Live_Website-make--a--thon--7.in-E91E63?style=for-the-badge)](https://make-a-thon-7.in/)
 [![Analytics](https://img.shields.io/badge/📊_Live_Analytics-Looker_Studio-F57C00?style=for-the-badge&logo=google&logoColor=white)](https://lookerstudio.google.com/u/0/reporting/0df8cf1a-d3dc-4f32-997b-2eeb81116dae)
