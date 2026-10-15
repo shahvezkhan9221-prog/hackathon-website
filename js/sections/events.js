@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════
    js/sections/events.js — scroll reveals for Register Now,
-   Synapse and Mentors sections
+   FUSION Club and Mentors sections
 ═══════════════════════════════════════════════════════════ */
 
 export function initEvents() {
