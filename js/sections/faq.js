@@ -10,7 +10,7 @@ const FAQ_DATA = [
     { q: 'Is there a registration fee?', a: 'No. Registration is completely free.' },
     { q: 'When does registration open?', a: 'Registration for all events will open soon on this website. Keep an eye on this page.' },
     { q: 'What are the dates of the event?', a: 'The dates have not been revealed yet. They are revealing soon.' },
-    { q: 'What events are part of Tech-A-Week 1.0?', a: 'Tech-A-Week 1.0 includes:<br>• Ideathon<br>• Tech Debate<br>• Project Exhibition<br>• 2 workshops (IoT &amp; AI, and AI, Cloud &amp; Cyber)' },
+    { q: 'What events are part of Tech-A-Week 1.0?', a: 'Tech-A-Week 1.0 includes:<br>• Ideathon<br>• Tech Debate<br>• Project Exhibition<br>• 2 workshops (IoT &amp; AI, and Fullstack, Cloud &amp; Cyber)' },
     { q: 'Who is organising Tech-A-Week 1.0?', a: 'Synapse, the IoT and Robotics Club of GLA University, organises the entire event, in collaboration with the AI, Cloud and Cyber clubs and Meraki Chronicles (Literature Club).' },
     { q: 'How does the Ideathon work?', a: 'The Ideathon is for early-stage innovation and problem pitching, focused on tech-driven solutions to real-world challenges.<br><br>• Team size: 2–4 students<br>• Pitch time: 8 minutes per team<br>• 5-minute presentation + 3-minute Q&amp;A with the jury' },
     { q: 'What should our Ideathon presentation include?', a: 'A PPT of a maximum of 7 slides covering:<br>• The problem<br>• Target audience<br>• Tech architecture<br>• Proposed solution' },
@@ -20,7 +20,7 @@ const FAQ_DATA = [
     { q: 'What are the Tech Debate topics?', a: 'The topics have not been decided yet. Every club will have different topics, and they will be revealed soon.' },
     { q: 'What can be exhibited in the Project Exhibition?', a: 'Only innovative hardware projects.<br><br>The exhibition is a physical showcase of hands-on prototypes and functional tech models.' },
     { q: 'Who organises the Project Exhibition?', a: 'The Project Exhibition is organised completely by the FUSION Club (IoT, Robotics &amp; Drones).' },
-    { q: 'What workshops will be held?', a: 'There are 2 workshops:<br>• Workshop 1: IoT &amp; AI, by the IoT and AI clubs<br>• Workshop 2: AI, Cloud &amp; Cyber, by the AI, Cloud and Cyber clubs<br><br>Dates and speakers are revealing soon.' },
+    { q: 'What workshops will be held?', a: 'There are 2 workshops:<br>• Workshop 1: IoT &amp; AI, by the IoT and AI clubs<br>• Workshop 2: Fullstack, Cloud &amp; Cyber, by the Fullstack, Cloud and Cyber clubs<br><br>Dates and speakers are revealing soon.' },
     { q: 'Who will mentor the participants?', a: 'Industry leaders will mentor the participants. The mentors are revealing soon.' },
     { q: 'Who can I contact for queries?', a: 'Coordinator details will be added soon. Until then, please check back on this page.' }
 ];
