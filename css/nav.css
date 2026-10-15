@@ -52,10 +52,16 @@
 }
 
 .nav__links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  white-space: nowrap;
+  }
+
+  @media (min-width: 901px) and (max-width: 1180px) {
+  .nav__links { gap: 0.75rem; }
+  .nav__link { font-size: 0.95rem; }
+  }
 
 .nav__link {
     font-family: var(--ff-display);

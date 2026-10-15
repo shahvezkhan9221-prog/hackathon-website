@@ -11,7 +11,7 @@ const FAQ_DATA = [
     { q: 'When does registration open?', a: 'Registration for all events will open soon on this website. Keep an eye on this page.' },
     { q: 'What are the dates of the event?', a: 'The dates have not been revealed yet. They are revealing soon.' },
     { q: 'What events are part of Tech-A-Week 1.0?', a: 'Tech-A-Week 1.0 includes:<br>• Ideathon<br>• Tech Debate<br>• Project Exhibition<br>• 2 workshops (IoT &amp; AI, and Fullstack, Cloud &amp; Cyber)' },
-    { q: 'Who is organising Tech-A-Week 1.0?', a: 'Synapse, the IoT and Robotics Club of GLA University, organises the entire event, in collaboration with the AI, Cloud and Cyber clubs and Meraki Chronicles (Literature Club).' },
+    { q: 'Who is organising Tech-A-Week 1.0?', a: 'FUSION Club, the IoT, Robotics and Drones Club of GLA University, organises the entire event, in collaboration with the AI, Cloud and Cyber clubs and Meraki Chronicles (Literature Club).' },
     { q: 'How does the Ideathon work?', a: 'The Ideathon is for early-stage innovation and problem pitching, focused on tech-driven solutions to real-world challenges.<br><br>• Team size: 2–4 students<br>• Pitch time: 8 minutes per team<br>• 5-minute presentation + 3-minute Q&amp;A with the jury' },
     { q: 'What should our Ideathon presentation include?', a: 'A PPT of a maximum of 7 slides covering:<br>• The problem<br>• Target audience<br>• Tech architecture<br>• Proposed solution' },
     { q: 'Can the audience ask questions during the Ideathon?', a: 'Yes. Presentations are held openly in front of all participants, and the audience can ask questions to the presenting team.' },
