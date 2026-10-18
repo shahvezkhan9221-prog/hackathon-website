@@ -46,32 +46,17 @@
     transition: transform 0.25s var(--ease-pop), filter 0.25s;
 }
 
-.nav__wordmark-main,
-.nav__wordmark-num {
+.nav__wordmark-main {
     font-family: 'Bangers', var(--ff-display);
-    font-size: 2rem;
+    font-size: 2.2rem;
     line-height: 1;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-}
-
-.nav__wordmark-main {
     padding: 0.2rem 0.5rem 0.2rem 0.2rem;
     color: var(--c-text);
     -webkit-text-stroke: 1px #000;
     paint-order: stroke fill;
     text-shadow: 2px 2px 0 var(--c-red), 4px 4px 0 #0a2a8a;
-}
-
-.nav__wordmark-num {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.2rem 0.45rem;
-    margin-left: 0.15rem;
-    background: var(--c-yellow);
-    color: #000;
-    border: 2px solid #000;
-    box-shadow: 3px 3px 0 var(--c-cyan);
 }
 
 .nav__logo:hover .nav__wordmark {
@@ -85,8 +70,7 @@
 }
 
 @media (max-width: 480px) {
-    .nav__wordmark-main,
-    .nav__wordmark-num { font-size: 1.6rem; }
+    .nav__wordmark-main { font-size: 1.8rem; }
 }
 
 .nav__links {
