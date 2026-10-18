@@ -105,6 +105,7 @@
       .reg-modal__btn--hw { background: #ff0040; color: #fff; box-shadow: 4px 4px 0 #000; }
       .reg-modal__btn--sw { background: #00f0ff; color: #000; box-shadow: 4px 4px 0 #000; }
       .reg-modal__btn--ind { background: #fcee0a; color: #000; box-shadow: 4px 4px 0 #000; }
+      .reg-modal__btn--lock { background: #1b1f2e; color: #fff; box-shadow: 4px 4px 0 #ff0040; border-color: #ff0040; }
       
       .reg-modal__btn:hover { transform: translate(-3px, -3px); box-shadow: 7px 7px 0 #000; filter: brightness(1.1); }
     `;
@@ -118,11 +119,12 @@
       <div class="reg-modal">
         <button class="reg-modal__close" id="reg-modal-close" aria-label="Close">&times;</button>
         <h3 class="reg-modal__title">Choose Your Event</h3>
-        <p class="reg-modal__sub">Registration opens soon &middot; GLA University students only</p>
+        <p class="reg-modal__sub">Registrations are live for the Ideathon and workshop &middot; GLA University students only</p>
         <div class="reg-modal__options">
-          <button type="button" data-event="event-ideathon" class="reg-modal__btn reg-modal__btn--hw">Ideathon<span class="reg-modal__btn-soon">REGISTRATION OPENS SOON</span></button>
+          <a href="https://unstop.com/o/q9eIzbA?lb=NBrXV5qW&utm_medium=Share&utm_source=competitions&utm_campaign=Avirasac80383" target="_blank" rel="noopener noreferrer" class="reg-modal__btn reg-modal__btn--hw">Ideathon<span class="reg-modal__btn-soon">REGISTRATIONS LIVE &middot; REGISTER NOW</span></a>
+          <a href="https://forms.gle/wdVzFPLkJidxu8dv6" target="_blank" rel="noopener noreferrer" class="reg-modal__btn reg-modal__btn--ind">Micro Fusion Workshop<span class="reg-modal__btn-soon">REGISTRATIONS LIVE &middot; REGISTER NOW</span></a>
           <button type="button" data-event="event-debate" class="reg-modal__btn reg-modal__btn--sw">Tech Debate<span class="reg-modal__btn-soon">REGISTRATION OPENS SOON</span></button>
-          <button type="button" data-event="event-exhibition" class="reg-modal__btn reg-modal__btn--ind">Project Exhibition<span class="reg-modal__btn-soon">REGISTRATION OPENS SOON</span></button>
+          <button type="button" data-event="event-hackathon" class="reg-modal__btn reg-modal__btn--lock">Hackathon<span class="reg-modal__btn-soon">23 NOVEMBER &middot; DETAILS LOCKED</span></button>
         </div>
       </div>
     `;
@@ -141,8 +143,11 @@
       }
     });
 
-    // Registration links are not live yet: jump to the event's details instead.
-    // When a form is ready, add `href` handling here keyed by data-event.
+    overlay.querySelectorAll('a.reg-modal__btn').forEach((link) => {
+      link.addEventListener('click', closeModal);
+    });
+
+    // Events without a live registration link jump to their details instead.
     overlay.querySelectorAll('[data-event]').forEach((btn) => {
       btn.addEventListener('click', () => {
         closeModal();

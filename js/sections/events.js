@@ -18,13 +18,12 @@ export function initEvents() {
         scrollTrigger: { trigger: '.events__grid', start: 'top 80%', once: true },
     });
 
-    gsap.from('.workshop-card', {
-        x: (i) => (i % 2 ? 60 : -60),
+    gsap.from('.workshop-feature', {
+        y: 50,
         opacity: 0,
         duration: 0.7,
-        stagger: 0.15,
         ease: 'power3.out',
-        scrollTrigger: { trigger: '.workshops__grid', start: 'top 85%', once: true },
+        scrollTrigger: { trigger: '.workshop-feature', start: 'top 85%', once: true },
     });
 
     gsap.from('.synapse__card, .synapse__slot', {
