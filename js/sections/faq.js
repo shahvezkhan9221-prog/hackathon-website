@@ -8,7 +8,7 @@ const FAQ_DATA = [
     { q: 'Who can participate in Tech-A-Week 1.0?', a: 'Only students of GLA University can participate.<br><br>Students from any other college are not allowed to participate in any event.' },
     { q: 'Can students from other colleges join?', a: 'No. Tech-A-Week 1.0 is open to GLA University students only.' },
     { q: 'Is there a registration fee?', a: 'No. Registration is completely free.' },
-    { q: 'How do I register?', a: 'Registrations are live for the Ideathon and the Micro Fusion workshop.<br><br>• Ideathon: register on Unstop using the Register Now button in the Ideathon card.<br>• Micro Fusion workshop: register through the Google Form linked in the Workshop section.<br><br>Tech Debate registration opens soon.' },
+    { q: 'How do I register?', a: 'Registrations are live for the Ideathon and the Micro Fusion workshop.<br><br>• Ideathon: register on Unstop using the Register Now button in the Ideathon card.<br>• Micro Fusion workshop: register through the Google Form linked in the Workshop section.<br><br>Tech Debate registration is open.' },
     { q: 'What are the dates of the event?', a: '• Micro Fusion workshop: Monday, 26 October 2026, 12:00 PM, Test Centre B<br>• Hackathon: 23 November<br><br>Other dates are revealing soon.' },
     { q: 'What events are part of Tech-A-Week 1.0?', a: 'Tech-A-Week 1.0 includes:<br>• Ideathon<br>• Tech Debate<br>• Hackathon (23 November, details locked)<br>• Micro Fusion workshop (IoT &amp; Robotics)' },
     { q: 'Who is organising Tech-A-Week 1.0?', a: 'FUSION Club, the IoT, Robotics and Drones Club of GLA University, organises the entire event. The Tech Debate is organised in collaboration with the Synapse, Cloud, Cyber and Fullstack clubs.' },

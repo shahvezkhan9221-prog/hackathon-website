@@ -123,7 +123,7 @@
         <div class="reg-modal__options">
           <a href="https://unstop.com/o/q9eIzbA?lb=NBrXV5qW&utm_medium=Share&utm_source=competitions&utm_campaign=Avirasac80383" target="_blank" rel="noopener noreferrer" class="reg-modal__btn reg-modal__btn--hw">Ideathon<span class="reg-modal__btn-soon">REGISTRATIONS LIVE &middot; REGISTER NOW</span></a>
           <a href="https://forms.gle/wdVzFPLkJidxu8dv6" target="_blank" rel="noopener noreferrer" class="reg-modal__btn reg-modal__btn--ind">Micro Fusion Workshop<span class="reg-modal__btn-soon">REGISTRATIONS LIVE &middot; REGISTER NOW</span></a>
-          <button type="button" data-event="event-debate" class="reg-modal__btn reg-modal__btn--sw">Tech Debate<span class="reg-modal__btn-soon">REGISTRATION OPENS SOON</span></button>
+          <button type="button" data-event="event-debate" class="reg-modal__btn reg-modal__btn--sw">Tech Debate<span class="reg-modal__btn-soon">REGISTRATION OPEN</span></button>
           <button type="button" data-event="event-hackathon" class="reg-modal__btn reg-modal__btn--lock">Hackathon<span class="reg-modal__btn-soon">23 NOVEMBER &middot; DETAILS LOCKED</span></button>
         </div>
       </div>
