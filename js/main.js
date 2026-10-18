@@ -51,7 +51,7 @@ async function boot() {
     initTeam();
     initFAQ();
 
-    console.log('[Tech-A-Week 1.0] All systems online.');
+    console.log('[YANTRIX26] All systems online.');
 }
 
 // Wait for DOM ready

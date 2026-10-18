@@ -5,13 +5,13 @@
 ═══════════════════════════════════════════════════════════ */
 
 const FAQ_DATA = [
-    { q: 'Who can participate in Tech-A-Week 1.0?', a: 'Only students of GLA University can participate.<br><br>Students from any other college are not allowed to participate in any event.' },
-    { q: 'Can students from other colleges join?', a: 'No. Tech-A-Week 1.0 is open to GLA University students only.' },
+    { q: 'Who can participate in YANTRIX26?', a: 'Only students of GLA University can participate.<br><br>Students from any other college are not allowed to participate in any event.' },
+    { q: 'Can students from other colleges join?', a: 'No. YANTRIX26 is open to GLA University students only.' },
     { q: 'Is there a registration fee?', a: 'No. Registration is completely free.' },
     { q: 'How do I register?', a: 'Registrations are live for the Ideathon and the Micro Fusion workshop.<br><br>• Ideathon: register on Unstop using the Register Now button in the Ideathon card.<br>• Micro Fusion workshop: register through the Google Form linked in the Workshop section.<br><br>Tech Debate registration is open.' },
-    { q: 'What are the dates of the event?', a: '• Micro Fusion workshop: Monday, 26 October 2026, 12:00 PM, Test Centre B<br>• Hackathon: 23 November<br><br>Other dates are revealing soon.' },
-    { q: 'What events are part of Tech-A-Week 1.0?', a: 'Tech-A-Week 1.0 includes:<br>• Ideathon<br>• Tech Debate<br>• Hackathon (23 November, details locked)<br>• Micro Fusion workshop (IoT &amp; Robotics)' },
-    { q: 'Who is organising Tech-A-Week 1.0?', a: 'FUSION Club, the IoT, Robotics and Drones Club of GLA University, organises the entire event. The Tech Debate is organised in collaboration with the Synapse, Cloud, Cyber and Fullstack clubs.' },
+    { q: 'What are the dates of the event?', a: '• IoT Workshop (Micro Fusion): Monday, 26 October 2026, 12:00 PM, Test Centre B<br>• Ideathon: 2 November<br>• Tech Debate: 2 November<br>• Hackathon: 23 November' },
+    { q: 'What events are part of YANTRIX26?', a: 'YANTRIX26 includes four events:<br>• IoT Workshop (Micro Fusion) &mdash; 26 October<br>• Ideathon &mdash; 2 November<br>• Tech Debate &mdash; 2 November<br>• Hackathon &mdash; 23 November (details locked)' },
+    { q: 'Who is organising YANTRIX26?', a: 'FUSION Club (IoT, Robotics and Drones) and Synapse AI Club (Artificial Intelligence and Machine Learning) of GLA University. FUSION Club leads the workshop, Ideathon and Hackathon; Synapse AI Club leads the Tech Debate.' },
     { q: 'What is the team size for each event?', a: '• Ideathon: 3 members per team<br>• Tech Debate: 4 members per team<br>• Hackathon: details are locked and will be revealed soon' },
     { q: 'How does the Ideathon work?', a: 'The Ideathon is for early-stage innovation and problem pitching, focused on tech-driven solutions to real-world challenges.<br><br>• Team size: 3 members<br>• Pitch time: 8 minutes per team<br>• 5-minute presentation + 3-minute Q&amp;A with the jury' },
     { q: 'What should our Ideathon presentation include?', a: 'A PPT of a maximum of 7 slides covering:<br>• The problem<br>• Target audience<br>• Tech architecture<br>• Proposed solution' },

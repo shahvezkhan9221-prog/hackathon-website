@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   synapse.css — ABOUT FUSION CLUB
+   synapse.css — ABOUT FUSION CLUB &amp; SYNAPSE AI CLUB
 ═══════════════════════════════════════════════════════════ */
 
 .section--synapse {
@@ -94,14 +94,83 @@
 }
 
 .synapse__slots {
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto 1fr;
 }
+
+.synapse__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-lg);
+}
+
+.synapse__card--ai { box-shadow: 8px 8px 0 var(--c-magenta); }
+
+.synapse__card-head {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.synapse__card-head .synapse__tag { margin-bottom: 0.5rem; }
+.synapse__card-head .synapse__title { margin-bottom: 0; font-size: clamp(1.6rem, 3vw, 2.3rem); }
+
+.synapse__logo {
+  flex: 0 0 96px;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  background: #fff;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 var(--c-cyan);
+}
+
+.synapse__card--ai .synapse__logo { box-shadow: 4px 4px 0 var(--c-magenta); }
+
+.synapse__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 6px;
+}
+
+.synapse__tag--magenta { background: var(--c-magenta); color: #fff; }
+
+.synapse__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.synapse__chips li {
+  padding: 0.3rem 0.75rem;
+  border: 2px solid var(--c-cyan);
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text);
+}
+
+.synapse__chips--magenta li { border-color: var(--c-magenta); }
 
 .synapse__slot--banner {
   aspect-ratio: 2171 / 724;
   border-style: solid;
   border-color: #000;
   box-shadow: 6px 6px 0 var(--c-cyan);
+}
+
+.synapse__slot--debate {
+  aspect-ratio: 800 / 175;
+  border-style: solid;
+  border-color: #000;
+  box-shadow: 6px 6px 0 var(--c-yellow);
 }
 
 .synapse__slot--poster {
