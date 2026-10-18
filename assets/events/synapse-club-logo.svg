@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260" role="img" aria-label="Synapse AI Club logo">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="7">
+    <path d="M150 52 L112 88 L112 128 L150 152" stroke="#0e8f8a"/>
+    <path d="M112 88 L72 88 L52 108" stroke="#0e8f8a"/>
+    <path d="M112 128 L76 128 L58 148" stroke="#0e8f8a"/>
+    <path d="M150 152 L150 196" stroke="#0e8f8a"/>
+    <path d="M150 52 L188 88 L228 88 L248 68" stroke="#f2a900"/>
+    <path d="M188 88 L188 128 L226 128 L246 148" stroke="#f2a900"/>
+    <path d="M150 152 L188 128" stroke="#f2a900"/>
+    <path d="M150 196 L184 196 L204 216" stroke="#f2a900"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="3">
+    <circle cx="150" cy="52" r="12" fill="#0e8f8a"/>
+    <circle cx="112" cy="88" r="9" fill="#0e8f8a"/>
+    <circle cx="112" cy="128" r="9" fill="#0e8f8a"/>
+    <circle cx="52" cy="108" r="9" fill="#0e8f8a"/>
+    <circle cx="58" cy="148" r="9" fill="#0e8f8a"/>
+    <circle cx="150" cy="152" r="14" fill="#0b2a4a"/>
+    <circle cx="150" cy="196" r="9" fill="#0e8f8a"/>
+    <circle cx="188" cy="88" r="9" fill="#f2a900"/>
+    <circle cx="188" cy="128" r="9" fill="#f2a900"/>
+    <circle cx="248" cy="68" r="9" fill="#f2a900"/>
+    <circle cx="246" cy="148" r="9" fill="#f2a900"/>
+    <circle cx="204" cy="216" r="9" fill="#f2a900"/>
+  </g>
+  <text x="150" y="250" text-anchor="middle" font-family="Montserrat, 'Arial Black', Arial, sans-serif" font-weight="800" font-size="24" letter-spacing="3" fill="#0b2a4a">SYNAPSE AI CLUB</text>
+</svg>

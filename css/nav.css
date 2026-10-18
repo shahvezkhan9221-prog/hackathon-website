@@ -39,16 +39,38 @@
     flex-shrink: 0;
 }
 
-.nav__logo-img {
-    height: 140px;
-    width: auto;
-    display: block;
-    transition: opacity 0.2s;
-    transform: translateY(5px);
+.nav__wordmark {
+    display: inline-flex;
+    align-items: stretch;
+    transform: skew(-6deg);
+    transition: transform 0.25s var(--ease-pop), filter 0.25s;
 }
 
-.nav__logo:hover .nav__logo-img {
-    opacity: 0.8;
+.nav__wordmark-main {
+    font-family: 'Bangers', var(--ff-display);
+    font-size: 2.2rem;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem 0.2rem 0.2rem;
+    color: var(--c-text);
+    -webkit-text-stroke: 1px #000;
+    paint-order: stroke fill;
+    text-shadow: 2px 2px 0 var(--c-red), 4px 4px 0 #0a2a8a;
+}
+
+.nav__logo:hover .nav__wordmark {
+    transform: skew(-6deg) translateY(-2px) scale(1.04);
+    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.45));
+}
+
+.nav__logo:focus-visible {
+    outline: 3px solid var(--c-cyan);
+    outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+    .nav__wordmark-main { font-size: 1.8rem; }
 }
 
 .nav__links {

@@ -135,7 +135,7 @@
   <nav class="comic-nav universe-nav">
     <div class="nav__container">
       <a href="index.html" class="nav__logo" aria-label="Back to main">
-        <img src="assets/Logo/logo.svg" alt="Tech-A-Week 1.0" class="nav__logo-img" />
+        <span class="nav__wordmark" aria-hidden="true"><span class="nav__wordmark-main">YANTRIX</span></span>
       </a>
       <ul class="nav__links">
         <li><a href="index.html#about"        class="nav__link">About Us</a></li>
@@ -1016,7 +1016,7 @@
 
   /* ═══════════════════════════════════════
      MODAL
-  ═══════════════════════════════════════ */
+  ════���═════════════════════���════════════ */
   function openModal(co, pIdx) {
     const p = co.problems[pIdx];
     const problemId = `IS${String(activeIndex+1).padStart(2,'0')}${String(pIdx+1).padStart(2,'0')}`;
