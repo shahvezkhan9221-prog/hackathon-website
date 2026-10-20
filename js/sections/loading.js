@@ -1,29 +1,14 @@
 /*
    js/sections/loading.js - Full-screen Loading Overlay
 
-   Cinematic intro: every frame of the Spider-Verse bridge scene is fetched
-   and decoded off the main thread first, then played back once on a canvas
-   at a fixed frame rate (time-based, so it never slows down or jumps).
-   Heavy site assets are preloaded only after the scene is ready, so they
-   never compete with playback. The site opens when the scene has finished.
+   Preloads frame animation and critical init resources, tracks progress,
+   and resolves only when initialization is ready to continue.
 */
 
-const TOTAL_FRAMES = 89;
-const FPS = 30;
-const FRAME_MS = 1000 / FPS;
-const SCENE_MS = TOTAL_FRAMES * FRAME_MS;
+const TOTAL_FRAMES = 74;
 const FRAME_PATH = 'assets/page_loading/';
-const FRAME_CONCURRENCY = 8;
-const FRAME_ASPECT = 9 / 16;
-const MIN_BITMAP_WIDTH = 480;
-const MAX_BITMAP_WIDTH = 960;
-
-const HOLD_BEFORE_PLAY_MS = 250;
-const HOLD_AFTER_PLAY_MS = 350;
-const FRAME_LOAD_TIMEOUT_MS = 12000;
-const SETTLE_TIMEOUT_MS = 4000;
+const MIN_DISPLAY_MS = 2000;
 const ASSET_TIMEOUT_MS = 8000;
-const FADE_FALLBACK_MS = 900;
 
 const QUOTES = [
     '"Anyone can wear the mask." - Miles Morales',
@@ -50,7 +35,7 @@ function getCriticalAssets() {
         ...Array.from(document.querySelectorAll('source[src]')).map((el) => el.getAttribute('src')),
     ]
         .filter(Boolean)
-        .filter((src) => !src.startsWith('http') && !src.startsWith(FRAME_PATH));
+        .filter((src) => !src.startsWith('http'));
 
     const dynamicInitAssets = [
         'assets/problembg.jpg',
@@ -60,48 +45,13 @@ function getCriticalAssets() {
     return [...new Set([...fromDOM, ...dynamicInitAssets])];
 }
 
-async function decodeImageElement(src) {
-    const img = new Image();
-    img.decoding = 'async';
-    img.src = src;
-    try {
-        await img.decode();
-    } catch {
-        return null;
-    }
-    return img;
-}
-
-async function loadFrame(src, targetWidth) {
-    if (typeof createImageBitmap === 'function') {
-        try {
-            const res = await fetch(src);
-            if (!res.ok) throw new Error(`HTTP ${res.status}`);
-            const blob = await res.blob();
-            return await createImageBitmap(blob, {
-                resizeWidth: targetWidth,
-                resizeQuality: 'medium',
-            });
-        } catch {
-            // fall through to the <img> decoder
-        }
-    }
-    return decodeImageElement(src);
-}
-
-function loadFramesInOrder(names, targetWidth, onFrame) {
-    const frames = new Array(names.length).fill(null);
-    let next = 0;
-
-    const worker = async () => {
-        while (next < names.length) {
-            const index = next++;
-            frames[index] = await loadFrame(names[index], targetWidth);
-            onFrame(index, frames);
-        }
-    };
-
-    return Promise.all(Array.from({ length: FRAME_CONCURRENCY }, worker)).then(() => frames);
+function loadImage(src) {
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => resolve(img);
+        img.src = src;
+    });
 }
 
 function loadAsset(src) {
@@ -165,28 +115,15 @@ export function initLoading() {
             return;
         }
 
-        const posterImg = document.getElementById('loading-frame');
-        const canvas = document.getElementById('loading-canvas');
+        const frameImg = document.getElementById('loading-frame');
         const barEl = document.getElementById('loading-bar');
         const percentEl = document.getElementById('loading-percent');
         const quoteEl = screen.querySelector('.loading__quote');
         const dotsEl = screen.querySelector('.loading__dots');
-        const wrapper = screen.querySelector('.loading__frame-wrapper');
 
-        const ctx = canvas ? canvas.getContext('2d', { alpha: false }) : null;
-        if (ctx) ctx.imageSmoothingQuality = 'high';
-
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        const wrapperWidth = (wrapper && wrapper.clientWidth) || 700;
-        const targetWidth = Math.max(
-            MIN_BITMAP_WIDTH,
-            Math.min(MAX_BITMAP_WIDTH, Math.round((wrapperWidth * dpr) / 2) * 2)
-        );
-
-        if (canvas) {
-            canvas.width = targetWidth;
-            canvas.height = Math.round(targetWidth * FRAME_ASPECT);
-        }
+        const frameNames = getFrameNames();
+        const criticalAssets = getCriticalAssets();
+        const loadedImages = new Array(TOTAL_FRAMES);
 
         let quoteIndex = 0;
         if (quoteEl) quoteEl.textContent = QUOTES[0];
@@ -199,7 +136,7 @@ export function initLoading() {
                 quoteEl.textContent = QUOTES[quoteIndex];
                 quoteEl.style.opacity = '0.85';
             }, 300);
-        }, 2600);
+        }, 3000);
 
         let dotCount = 0;
         const dotsInterval = setInterval(() => {
@@ -207,169 +144,112 @@ export function initLoading() {
             if (dotsEl) dotsEl.textContent = '.'.repeat(dotCount);
         }, 400);
 
-        // ── Progress bookkeeping ──────────────────────────────
-        const criticalAssets = getCriticalAssets();
+        let frameProgress = 0;
+        let assetProgress = 0;
+        let pageProgress = 0;
+
         let framesLoaded = 0;
         let assetsLoaded = 0;
-        let assetsStarted = false;
-        let pageDone = document.readyState === 'complete';
-        let frames = new Array(TOTAL_FRAMES).fill(null);
-        let framesReady = false;
-
-        if (!pageDone) {
-            window.addEventListener('load', () => { pageDone = true; }, { once: true });
-        }
-
-        function loadFraction() {
-            const framePart = framesLoaded / TOTAL_FRAMES;
-            const assetPart = criticalAssets.length ? assetsLoaded / criticalAssets.length : 1;
-            return framePart * 0.6 + assetPart * 0.3 + (pageDone ? 0.1 : 0);
-        }
-
-        function allLoaded() {
-            return framesReady && assetsLoaded >= criticalAssets.length && pageDone;
-        }
-
-        function startAssets() {
-            if (assetsStarted) return;
-            assetsStarted = true;
-            criticalAssets.forEach((src) => {
-                loadAsset(src).then(() => { assetsLoaded++; });
-            });
-        }
-
-        // ── Drawing ───────────────────────────────────────────
-        let lastDrawn = -1;
-
-        function drawFrame(index) {
-            if (!ctx || index === lastDrawn) return;
-            let source = frames[index];
-            let probe = index;
-            while (!source && probe > 0) source = frames[--probe];
-            if (!source) return;
-            ctx.drawImage(source, 0, 0, canvas.width, canvas.height);
-            lastDrawn = index;
-        }
-
-        // ── Single animation loop ─────────────────────────────
+        let windowLoaded = false;
+        let finished = false;
         const startTime = performance.now();
-        let phase = 'loading';
-        let phaseStart = startTime;
-        let playStart = 0;
-        let playFraction = 0;
-        let displayed = 0;
-        let lastTs = startTime;
-        let lastPercent = -1;
-        let rafId = 0;
 
-        function setPhase(next, ts) {
-            phase = next;
-            phaseStart = ts;
+        function getOverallProgress() {
+            return Math.min(100, Math.round(frameProgress * 0.6 + assetProgress * 0.25 + pageProgress * 0.15));
         }
 
-        function render() {
-            const pct = Math.round(displayed * 100);
-            if (barEl) barEl.style.transform = `scaleX(${displayed.toFixed(4)})`;
-            if (percentEl && pct !== lastPercent) {
-                percentEl.textContent = `${pct}%`;
-                lastPercent = pct;
+        function updateUI() {
+            const pct = getOverallProgress();
+            const frameIndex = Math.min(TOTAL_FRAMES - 1, Math.floor((pct / 100) * (TOTAL_FRAMES - 1)));
+
+            if (loadedImages[frameIndex] && frameImg) {
+                frameImg.src = loadedImages[frameIndex].src;
+            }
+
+            if (barEl) barEl.style.width = `${pct}%`;
+            if (percentEl) percentEl.textContent = `${pct}%`;
+
+            if (pct >= 100 && !finished) {
+                const elapsed = performance.now() - startTime;
+                const remaining = Math.max(0, MIN_DISPLAY_MS - elapsed);
+                finished = true;
+                setTimeout(completeLoading, remaining);
             }
         }
 
-        function tick(ts) {
-            const dt = Math.min(0.1, (ts - lastTs) / 1000);
-            lastTs = ts;
+        function completeLoading() {
+            clearInterval(quoteInterval);
+            clearInterval(dotsInterval);
 
-            if (phase === 'loading') {
-                if (framesReady) {
-                    const hasAnyFrame = frames.some(Boolean);
-                    setPhase(hasAnyFrame ? 'holding' : 'settling', ts);
-                    if (!hasAnyFrame) playFraction = 1;
-                } else if (ts - startTime > FRAME_LOAD_TIMEOUT_MS) {
-                    // Too slow to play the scene smoothly: skip it rather than stutter.
-                    startAssets();
-                    playFraction = 1;
-                    setPhase('settling', ts);
-                }
-            }
+            let currentFrame = Math.floor((getOverallProgress() / 100) * (TOTAL_FRAMES - 1));
 
-            if (phase === 'holding' && ts - phaseStart >= HOLD_BEFORE_PLAY_MS) {
-                playStart = ts;
-                setPhase('playing', ts);
-            }
-
-            if (phase === 'playing') {
-                const elapsed = ts - playStart;
-                drawFrame(Math.min(TOTAL_FRAMES - 1, Math.floor(elapsed / FRAME_MS)));
-                playFraction = Math.min(1, elapsed / SCENE_MS);
-                if (elapsed >= SCENE_MS) {
-                    drawFrame(TOTAL_FRAMES - 1);
-                    playFraction = 1;
-                    setPhase('settling', ts);
-                }
-            }
-
-            const target = Math.min(1, loadFraction() * 0.5 + playFraction * 0.5);
-            displayed += (target - displayed) * (1 - Math.exp(-dt * 9));
-            if (target - displayed < 0.001) displayed = target;
-            render();
-
-            if (phase === 'settling') {
-                const waited = ts - phaseStart;
-                const ready = allLoaded() || waited >= SETTLE_TIMEOUT_MS;
-                if (ready && waited >= HOLD_AFTER_PLAY_MS && displayed >= 0.995) {
-                    leave();
+            const playRemaining = () => {
+                if (currentFrame < TOTAL_FRAMES - 1) {
+                    currentFrame++;
+                    if (loadedImages[currentFrame] && frameImg) {
+                        frameImg.src = loadedImages[currentFrame].src;
+                    }
+                    setTimeout(playRemaining, 33);
                     return;
                 }
-            }
 
-            rafId = requestAnimationFrame(tick);
-        }
-
-        function cleanup() {
-            clearInterval(quoteInterval);
-            clearInterval(dotsInterval);
-            frames.forEach((frame) => {
-                if (frame && typeof frame.close === 'function') frame.close();
-            });
-            frames = [];
-        }
-
-        function leave() {
-            phase = 'leaving';
-            displayed = 1;
-            render();
-            clearInterval(quoteInterval);
-            clearInterval(dotsInterval);
-
-            let finished = false;
-            const finish = () => {
-                if (finished) return;
-                finished = true;
-                cleanup();
-                screen.remove();
-                resolve();
+                setTimeout(() => {
+                    screen.classList.add('fade-out');
+                    setTimeout(() => {
+                        screen.remove();
+                        resolve();
+                    }, 650);
+                }, 300);
             };
 
-            screen.addEventListener('transitionend', (e) => {
-                if (e.target === screen && e.propertyName === 'opacity') finish();
-            });
-            setTimeout(finish, FADE_FALLBACK_MS);
-            screen.classList.add('fade-out');
+            playRemaining();
         }
 
-        // ── Kick everything off ───────────────────────────────
-        loadFramesInOrder(getFrameNames(), targetWidth, (index, loaded) => {
-            framesLoaded++;
-            frames = loaded;
-            if (index === 0) drawFrame(0);
-        }).then((loaded) => {
-            frames = loaded;
-            framesReady = true;
-            startAssets();
+        frameNames.forEach((src, i) => {
+            loadImage(src).then((img) => {
+                loadedImages[i] = img;
+                framesLoaded++;
+                frameProgress = (framesLoaded / TOTAL_FRAMES) * 100;
+                updateUI();
+            });
         });
 
-        rafId = requestAnimationFrame(tick);
-        void rafId;
+        if (criticalAssets.length === 0) {
+            assetProgress = 100;
+            updateUI();
+        } else {
+            criticalAssets.forEach((src) => {
+                loadAsset(src).then(() => {
+                    assetsLoaded++;
+                    assetProgress = (assetsLoaded / criticalAssets.length) * 100;
+                    updateUI();
+                });
+            });
+        }
+
+        if (document.readyState === 'complete') {
+            pageProgress = 100;
+            windowLoaded = true;
+            updateUI();
+        } else {
+            let fakeTick = 0;
+            const tickInterval = setInterval(() => {
+                if (!windowLoaded && fakeTick < 80) {
+                    fakeTick += Math.random() * 3;
+                    pageProgress = Math.min(80, fakeTick);
+                    updateUI();
+                }
+                if (windowLoaded) {
+                    clearInterval(tickInterval);
+                }
+            }, 200);
+
+            window.addEventListener('load', () => {
+                windowLoaded = true;
+                pageProgress = 100;
+                clearInterval(tickInterval);
+                updateUI();
+            });
+        }
     });
 }
