@@ -70,33 +70,6 @@
 .synapse__body:last-child { margin-bottom: 0; }
 .synapse__body strong { color: var(--c-text); }
 
-.synapse__slots {
-  display: grid;
-  grid-template-rows: repeat(2, minmax(150px, 1fr));
-  gap: var(--sp-lg);
-}
-
-.synapse__slot {
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-  border: 3px dashed rgba(255, 255, 255, 0.35);
-  background:
-    repeating-linear-gradient(-55deg, transparent 0 14px, rgba(255, 255, 255, 0.03) 14px 28px),
-    rgba(24, 26, 37, 0.6);
-}
-
-.synapse__img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.synapse__slots {
-  grid-template-rows: auto auto 1fr;
-}
-
 .synapse__cards {
   display: flex;
   flex-direction: column;
@@ -159,35 +132,126 @@
 
 .synapse__chips--magenta li { border-color: var(--c-magenta); }
 
-.synapse__slot--banner {
-  aspect-ratio: 2171 / 724;
-  border-style: solid;
-  border-color: #000;
-  box-shadow: 6px 6px 0 var(--c-cyan);
+/* ── Sketchbook page-flip ── */
+.sketchbook {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+  min-width: 0;
 }
 
-.synapse__slot--debate {
-  aspect-ratio: 800 / 175;
-  border-style: solid;
-  border-color: #000;
-  box-shadow: 6px 6px 0 var(--c-yellow);
+.sketchbook__book {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 869 / 489;
+  perspective: 2600px;
+  cursor: pointer;
+  outline-offset: 6px;
 }
 
-.synapse__slot--poster {
-  min-height: 320px;
-  border-style: solid;
-  border-color: #000;
-  box-shadow: 6px 6px 0 var(--c-magenta);
+.sketchbook__book:focus-visible { outline: 3px solid var(--c-yellow); }
+
+.sketchbook__book::before {
+  content: "";
+  position: absolute;
+  inset: 9% 6% 2% 6%;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.55);
+  filter: blur(26px);
 }
 
-.synapse__slot--poster .synapse__img { object-position: top center; }
+.sketchbook__book * { pointer-events: none; }
+
+.sketchbook__page,
+.sketchbook__turn { display: contents; }
+
+.sketchbook__half,
+.sketchbook__face {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.sketchbook__half { width: 50%; }
+.sketchbook__half.right { left: 50%; }
+
+.sketchbook__half img,
+.sketchbook__face img {
+  display: block;
+  width: 200%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+.sketchbook__book img.right { margin-left: -100%; }
+
+.sketchbook__flap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.sketchbook__flap.next { left: 50%; }
+
+.sketchbook__face {
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.sketchbook__face.back { transform: rotateY(180deg); }
+
+.sketchbook__book.blur-light img { filter: url(#sketchbook-blur-light); }
+.sketchbook__book.blur-heavy img { filter: url(#sketchbook-blur-heavy); }
+
+.sketchbook__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sketchbook__caption {
+  flex: 1;
+  margin: 0;
+  text-align: center;
+  font-family: var(--ff-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-text);
+  text-wrap: balance;
+}
+
+.sketchbook__arrow {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0 0 4px;
+  font-size: 2rem;
+  line-height: 1;
+  color: #000;
+  background: var(--c-yellow);
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 var(--c-magenta);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sketchbook__arrow:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--c-magenta); }
+.sketchbook__arrow:focus-visible { outline: 3px solid var(--c-cyan); outline-offset: 3px; }
 
 @media (max-width: 860px) {
   .synapse__layout { grid-template-columns: 1fr; }
-  .synapse__slots {
-    grid-template-rows: none;
-    grid-template-columns: 1fr;
-  }
-  .synapse__slot--poster { min-height: 0; aspect-ratio: 2 / 3; max-width: 420px; justify-self: center; width: 100%; }
   .synapse__card { padding: 1.5rem; }
 }

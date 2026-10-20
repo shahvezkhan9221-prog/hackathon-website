@@ -28,6 +28,7 @@ import { initTimeline } from './sections/timeline.js';
 import { initEvents } from './sections/events.js';
 import { initTeam } from './sections/team.js';
 import { initFAQ } from './sections/faq.js';
+import { initSketchbook } from './sections/sketchbook.js';
 
 /**
  * Boot sequence — runs when DOM is ready.
@@ -50,6 +51,7 @@ async function boot() {
     initEvents();
     initTeam();
     initFAQ();
+    try { initSketchbook(); } catch (e) { console.warn('[boot] Sketchbook init failed:', e); }
 
     console.log('[YANTRIX26] All systems online.');
 }
