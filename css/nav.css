@@ -125,6 +125,97 @@
     color: var(--c-bg);
 }
 
+/* ── Nav actions: music toggle + register ── */
+.nav__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* ── Music toggle (borderless) ── */
+.audio-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    color: var(--c-cyan);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.2s var(--ease-pop), color 0.2s, filter 0.2s;
+}
+
+.audio-toggle:hover {
+    transform: scale(1.12);
+    color: var(--c-yellow);
+    filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.5));
+}
+
+.audio-toggle:active {
+    transform: scale(0.94);
+}
+
+.audio-toggle:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 2px;
+}
+
+.audio-toggle__note {
+    display: block;
+}
+
+.audio-toggle__bars {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    height: 24px;
+}
+
+.audio-toggle__bars span {
+    display: block;
+    width: 3px;
+    height: 100%;
+    background: currentColor;
+    border-radius: 2px;
+    transform: scaleY(0.35);
+    transform-origin: center;
+}
+
+.audio-toggle.is-playing .audio-toggle__note {
+    display: none;
+}
+
+.audio-toggle.is-playing .audio-toggle__bars {
+    display: flex;
+}
+
+.audio-toggle.is-playing .audio-toggle__bars span {
+    animation: audio-bar 0.8s infinite alternate ease-in-out;
+}
+
+.audio-toggle.is-playing .audio-toggle__bars span:nth-child(1) { animation-delay: 0s; }
+.audio-toggle.is-playing .audio-toggle__bars span:nth-child(2) { animation-delay: 0.2s; }
+.audio-toggle.is-playing .audio-toggle__bars span:nth-child(3) { animation-delay: 0.4s; }
+.audio-toggle.is-playing .audio-toggle__bars span:nth-child(4) { animation-delay: 0.15s; }
+
+@keyframes audio-bar {
+    0%   { transform: scaleY(0.3); opacity: 0.6; }
+    100% { transform: scaleY(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .audio-toggle.is-playing .audio-toggle__bars span {
+        animation: none;
+        transform: scaleY(0.7);
+    }
+}
+
 /* ── Hamburger button ── */
 .nav__hamburger {
     display: none;
@@ -240,8 +331,13 @@
         display: none;
     }
 
-    .nav__container > .btn--nav {
+    .nav__actions > .btn--nav {
         display: none; /* Hide desktop register button */
+    }
+
+    .nav__actions {
+        margin-left: auto;
+        margin-right: 0.25rem;
     }
 
     .nav__hamburger {

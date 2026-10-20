@@ -88,7 +88,15 @@
         <li><a href="#team" class="nav__link">The Crew</a></li>
         <li><a href="#faq" class="nav__link">FAQ</a></li>
       </ul>
-      <a href="#events" class="btn btn--nav text-yellow">REGISTER</a>
+      <div class="nav__actions">
+        <button type="button" id="audio-toggle" class="audio-toggle" aria-label="Play music" aria-pressed="false">
+          <svg class="audio-toggle__note" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+            <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" />
+          </svg>
+          <span class="audio-toggle__bars" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        </button>
+        <a href="#events" class="btn btn--nav text-yellow">REGISTER</a>
+      </div>
       <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"
         aria-controls="nav-drawer">
         <span></span>
@@ -949,6 +957,8 @@
     </div>
   </div>
 
+  <audio id="bg-audio" src="assets/dracula.mp3" preload="auto" loop></audio>
+  <script src="js/core/music.js"></script>
   <script src="js/core/hamburger.js"></script>
   <script type="module" src="js/main.js"></script>
   <script src="js/cursor.js"></script>
