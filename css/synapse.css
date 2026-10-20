@@ -209,8 +209,17 @@
 
 .sketchbook__face.back { transform: rotateY(180deg); }
 
-.sketchbook__book.blur-light img { filter: url(#sketchbook-blur-light); }
-.sketchbook__book.blur-heavy img { filter: url(#sketchbook-blur-heavy); }
+.sketchbook__flap,
+.sketchbook__face {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.sketchbook__flap { contain: layout; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sketchbook__flap { transition: none; }
+}
 
 .sketchbook__controls {
   display: flex;

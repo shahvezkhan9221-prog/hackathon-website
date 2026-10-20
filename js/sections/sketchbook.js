@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   js/sections/sketchbook.js — Page-flip sketchbook (GSAP)
+   js/sections/sketchbook.js — Auto-turning page-flip sketchbook (GSAP)
    Used in the "About FUSION Club & Synapse Club" section.
 ═══════════════════════════════════════════════════════════ */
 
@@ -8,6 +8,10 @@ const PAGES = [
     { src: 'assets/events/sketchbook/page-2.png', title: 'We are a Family and We Build Together' },
     { src: 'assets/events/sketchbook/page-3.png', title: 'Workshop: Build, Learn, Create' },
 ];
+
+const TURN_DURATION = 1.1;
+const AUTO_TURN_DELAY = 3.2;
+const RESUME_DELAY = 5;
 
 export function initSketchbook() {
     const book = document.getElementById('sketchbook-book');
@@ -19,82 +23,109 @@ export function initSketchbook() {
     if (!book || !pageEl || !caption || !window.gsap) return;
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const hasCustomEase = !!window.CustomEase;
-    if (hasCustomEase) {
-        gsap.registerPlugin(CustomEase);
-        CustomEase.create('pageTurn', '.42,.05,.25,1');
-    }
-    const turnEase = hasCustomEase ? 'pageTurn' : 'power2.inOut';
 
-    PAGES.forEach(({ src }) => { new Image().src = src; });
+    const images = PAGES.map(({ src }) => {
+        const img = new Image();
+        img.decoding = 'sync';
+        img.draggable = false;
+        img.alt = '';
+        img.src = src;
+        return img;
+    });
+
+    const ready = Promise.all(images.map((img) => img.decode().catch(() => {})));
 
     let currentPage = 0;
     let flipTween = null;
-    let introPlaying = false;
+    let autoTimer = null;
+    let inView = false;
+    let paused = false;
 
-    const halfImage = (pageIndex, side) =>
-        `<img src="${PAGES[pageIndex].src}" class="${side}" alt="" draggable="false">`;
+    function halfImage(pageIndex, side) {
+        const img = images[pageIndex].cloneNode();
+        img.className = side;
+        return img;
+    }
+
+    function buildHalf(pageIndex, side) {
+        const half = document.createElement('div');
+        half.className = `sketchbook__half ${side}`;
+        half.appendChild(halfImage(pageIndex, side));
+        return half;
+    }
 
     function showPage(pageIndex) {
         currentPage = pageIndex;
-        pageEl.innerHTML = `
-            <div class="sketchbook__half left">${halfImage(pageIndex, 'left')}</div>
-            <div class="sketchbook__half right">${halfImage(pageIndex, 'right')}</div>`;
+        pageEl.replaceChildren(buildHalf(pageIndex, 'left'), buildHalf(pageIndex, 'right'));
     }
 
     function setCaption(title) {
         caption.textContent = title;
-        gsap.fromTo(caption, { opacity: 0 }, { opacity: 1, duration: 0.4, overwrite: 'auto' });
+        gsap.fromTo(caption, { opacity: 0 }, { opacity: 1, duration: 0.5, overwrite: 'auto' });
     }
 
-    function turn(direction, duration = 0.85, ease = turnEase, onDone) {
-        if (flipTween && flipTween.isActive()) flipTween.progress(1);
+    function turn(direction) {
+        if (flipTween && flipTween.isActive()) return;
 
         const goingNext = direction === 'next';
         const targetPage = (currentPage + (goingNext ? 1 : -1) + PAGES.length) % PAGES.length;
         const liftSide = goingNext ? 'right' : 'left';
         const landSide = goingNext ? 'left' : 'right';
 
-        book.insertAdjacentHTML('beforeend', `
-            <div class="sketchbook__turn">
-                <div class="sketchbook__half ${liftSide}">${halfImage(targetPage, liftSide)}</div>
-                <div class="sketchbook__flap ${goingNext ? 'next' : 'prev'}">
-                    <div class="sketchbook__face">${halfImage(currentPage, liftSide)}</div>
-                    <div class="sketchbook__face back">${halfImage(targetPage, landSide)}</div>
-                </div>
-            </div>`);
+        const turnLayer = document.createElement('div');
+        turnLayer.className = 'sketchbook__turn';
+
+        const flap = document.createElement('div');
+        flap.className = `sketchbook__flap ${goingNext ? 'next' : 'prev'}`;
+
+        const front = document.createElement('div');
+        front.className = 'sketchbook__face';
+        front.appendChild(halfImage(currentPage, liftSide));
+
+        const back = document.createElement('div');
+        back.className = 'sketchbook__face back';
+        back.appendChild(halfImage(targetPage, landSide));
+
+        flap.append(front, back);
+        turnLayer.append(buildHalf(targetPage, liftSide), flap);
+        book.appendChild(turnLayer);
 
         setCaption(PAGES[targetPage].title);
 
-        flipTween = gsap.to(book.querySelector('.sketchbook__flap'), {
-            rotationY: goingNext ? -180 : 180,
+        gsap.set(flap, {
             transformOrigin: goingNext ? 'left center' : 'right center',
-            duration: reducedMotion ? 0.01 : duration,
-            ease,
+            rotationY: 0,
+            force3D: true,
+        });
+
+        flipTween = gsap.to(flap, {
+            rotationY: goingNext ? -180 : 180,
+            duration: reducedMotion ? 0.01 : TURN_DURATION,
+            ease: 'power2.inOut',
             onComplete() {
                 showPage(targetPage);
-                book.querySelector('.sketchbook__turn')?.remove();
-                if (onDone) onDone();
+                turnLayer.remove();
             },
         });
     }
 
-    function riffle(step = 0) {
-        if (!introPlaying || step >= PAGES.length) {
-            introPlaying = false;
-            book.classList.remove('blur-light', 'blur-heavy');
-            return;
-        }
-        const bell = Math.sin(Math.PI * step / (PAGES.length - 1));
-        book.classList.toggle('blur-light', bell > 0.25 && bell <= 0.6);
-        book.classList.toggle('blur-heavy', bell > 0.6);
-        turn('next', 0.2 - 0.15 * bell, 'none', () => riffle(step + 1));
+    function stopAuto() {
+        if (autoTimer) autoTimer.kill();
+        autoTimer = null;
+    }
+
+    function scheduleAuto(delay = AUTO_TURN_DELAY) {
+        stopAuto();
+        if (reducedMotion || paused || !inView || document.hidden) return;
+        autoTimer = gsap.delayedCall(delay, () => {
+            turn('next');
+            scheduleAuto(AUTO_TURN_DELAY + TURN_DURATION);
+        });
     }
 
     function navigate(direction) {
-        introPlaying = false;
-        book.classList.remove('blur-light', 'blur-heavy');
         turn(direction);
+        scheduleAuto(RESUME_DELAY + TURN_DURATION);
     }
 
     nextButton?.addEventListener('click', () => navigate('next'));
@@ -110,18 +141,26 @@ export function initSketchbook() {
         if (event.key === 'ArrowLeft') { event.preventDefault(); navigate('prev'); }
     });
 
+    book.addEventListener('pointerenter', () => { paused = true; stopAuto(); });
+    book.addEventListener('pointerleave', () => { paused = false; scheduleAuto(); });
+    book.addEventListener('focus', () => { paused = true; stopAuto(); });
+    book.addEventListener('blur', () => { paused = false; scheduleAuto(); });
+
+    document.addEventListener('visibilitychange', () => scheduleAuto());
+
     showPage(0);
     setCaption(PAGES[0].title);
 
-    if (reducedMotion || !('IntersectionObserver' in window)) return;
+    if (!('IntersectionObserver' in window)) {
+        inView = true;
+        ready.then(() => scheduleAuto(1.5));
+        return;
+    }
 
     const observer = new IntersectionObserver((entries) => {
-        if (!entries.some((entry) => entry.isIntersecting)) return;
-        observer.disconnect();
-        gsap.delayedCall(0.3, () => {
-            introPlaying = true;
-            riffle();
-        });
-    }, { threshold: 0.5 });
+        inView = entries.some((entry) => entry.isIntersecting);
+        if (inView) ready.then(() => scheduleAuto(1.2));
+        else stopAuto();
+    }, { threshold: 0.4 });
     observer.observe(book);
 }
