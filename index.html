@@ -46,6 +46,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/CustomEase.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
@@ -618,22 +619,16 @@
             </article>
           </div>
 
-          <div class="synapse__slots" aria-label="Event posters">
-            <figure class="synapse__slot synapse__slot--banner">
-              <img src="assets/events/anvesh-ideathon-banner.png"
-                alt="Anvesh '26 Ideathon banner - From Thought to Creation, organised by FUSION Club"
-                class="synapse__img" width="2171" height="724" loading="lazy" />
-            </figure>
-            <figure class="synapse__slot synapse__slot--debate">
-              <img src="assets/events/tech-debate-banner.png"
-                alt="Tech Debate banner - GLA University and Synapse AI Club present Tech Debate"
-                class="synapse__img" width="800" height="175" loading="lazy" />
-            </figure>
-            <figure class="synapse__slot synapse__slot--poster">
-              <img src="assets/events/micro-fusion-workshop.jpeg"
-                alt="Micro Fusion workshop poster - Brains Behind The Machines, Raspberry Pi workshop on 26 October 2026"
-                class="synapse__img" width="1024" height="1536" loading="lazy" />
-            </figure>
+          <div class="sketchbook" role="group" aria-roledescription="carousel"
+            aria-label="FUSION Club sketchbook - use the arrow keys or buttons to turn pages">
+            <div class="sketchbook__book" id="sketchbook-book" tabindex="0">
+              <div class="sketchbook__page" id="sketchbook-page"></div>
+            </div>
+            <div class="sketchbook__controls">
+              <button class="sketchbook__arrow" id="sketchbook-prev" type="button" aria-label="Previous page">&lsaquo;</button>
+              <p class="sketchbook__caption" id="sketchbook-caption" aria-live="polite"></p>
+              <button class="sketchbook__arrow" id="sketchbook-next" type="button" aria-label="Next page">&rsaquo;</button>
+            </div>
           </div>
         </div>
       </div>
